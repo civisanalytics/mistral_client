@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows
+    body:
+      encoding: UTF-8
+      string: |
+        ---
+          version: "2.0"
+          echo_test:
+            type: direct
+            tasks:
+              echo:
+                action: std.echo output="ok"
+    headers:
+      Content-Type:
+      - text/plain
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Length:
+      - '341'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 11 Sep 2017 18:16:17 GMT
+    body:
+      encoding: UTF-8
+      string: '{"workflows": [{"definition": "---\n  version: \"2.0\"\n  echo_test:\n    type:
+        direct\n    tasks:\n      echo:\n        action: std.echo output=\"ok\"\n",
+        "name": "echo_test", "tags": [], "created_at": "2017-09-11 18:16:17", "scope":
+        "private", "input": "", "project_id": "<default-project>", "id": "0299a39c-2690-4eef-a401-e893fd5c765c"}]}'
+    http_version: 
+  recorded_at: Mon, 11 Sep 2017 18:17:44 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/executions
+    body:
+      encoding: UTF-8
+      string: '{"workflow_id":"0299a39c-2690-4eef-a401-e893fd5c765c"}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Length:
+      - '338'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 11 Sep 2017 18:16:17 GMT
+    body:
+      encoding: UTF-8
+      string: '{"state_info": null, "created_at": "2017-09-11 18:16:17", "description":
+        "", "state": "RUNNING", "workflow_name": "echo_test", "task_execution_id":
+        null, "updated_at": "2017-09-11 18:16:17", "workflow_id": "0299a39c-2690-4eef-a401-e893fd5c765c",
+        "params": "{}", "output": "{}", "input": "{}", "id": "143ba36a-cd0f-4a77-9e7e-8a0b02a5c640"}'
+    http_version: 
+  recorded_at: Mon, 11 Sep 2017 18:17:44 GMT
+- request:
+    method: delete
+    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows/0299a39c-2690-4eef-a401-e893fd5c765c
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Date:
+      - Mon, 11 Sep 2017 18:16:18 GMT
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Mon, 11 Sep 2017 18:17:45 GMT
+recorded_with: VCR 3.0.3

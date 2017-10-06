@@ -1,0 +1,35 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows/validate
+    body:
+      encoding: UTF-8
+      string: |
+        ---
+          version: "2.0"
+          echo_test:
+            type: direct
+            tasks:
+              echo:
+                action: std.echo output="ok"
+    headers:
+      Content-Type:
+      - text/plain
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '15'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 29 Aug 2017 22:08:29 GMT
+    body:
+      encoding: UTF-8
+      string: '{"valid": true}'
+    http_version: 
+  recorded_at: Tue, 29 Aug 2017 22:12:21 GMT
+recorded_with: VCR 3.0.3

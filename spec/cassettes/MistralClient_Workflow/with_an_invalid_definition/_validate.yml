@@ -1,0 +1,390 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows/validate
+    body:
+      encoding: UTF-8
+      string: |
+        ---
+          version: "2.0"
+          echo_test:
+            type: direct
+    headers:
+      Content-Type:
+      - text/plain
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '45681'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 13 Jul 2017 17:19:14 GMT
+    body:
+      encoding: UTF-8
+      string: '{"valid": false, "error": "Invalid DSL: ''tasks'' is a required property\n\nFailed
+        validating ''required'' in schema:\n    {''definitions'': {},\n     ''properties'':
+        {''input'': {''items'': {''oneOf'': [{''minLength'': 1,\n                                                   ''type'':
+        ''string''},\n                                                  {''maxProperties'':
+        1,\n                                                   ''minProperties'':
+        1,\n                                                   ''patternProperties'':
+        {''^\\\\w+$'': {''anyOf'': [{''type'': ''null''},\n                                                                                              {''type'':
+        ''array''},\n                                                                                              {''type'':
+        ''boolean''},\n                                                                                              {''type'':
+        ''integer''},\n                                                                                              {''type'':
+        ''number''},\n                                                                                              {''type'':
+        ''object''},\n                                                                                              {''type'':
+        ''string''}]}},\n                                                   ''type'':
+        ''object''}]},\n                              ''minItems'': 1,\n                              ''type'':
+        ''array'',\n                              ''uniqueItems'': True},\n                    ''output'':
+        {''minProperties'': 1,\n                               ''patternProperties'':
+        {''^\\\\w+$'': {''anyOf'': [{''type'': ''null''},\n                                                                          {''type'':
+        ''array''},\n                                                                          {''type'':
+        ''boolean''},\n                                                                          {''type'':
+        ''integer''},\n                                                                          {''type'':
+        ''number''},\n                                                                          {''type'':
+        ''object''},\n                                                                          {''type'':
+        ''string''}]}},\n                               ''type'': ''object''},\n                    ''output-on-error'':
+        {''minProperties'': 1,\n                                        ''patternProperties'':
+        {''^\\\\w+$'': {''anyOf'': [{''type'': ''null''},\n                                                                                   {''type'':
+        ''array''},\n                                                                                   {''type'':
+        ''boolean''},\n                                                                                   {''type'':
+        ''integer''},\n                                                                                   {''type'':
+        ''number''},\n                                                                                   {''type'':
+        ''object''},\n                                                                                   {''type'':
+        ''string''}]}},\n                                        ''type'': ''object''},\n                    ''task-defaults'':
+        {''additionalProperties'': False,\n                                      ''properties'':
+        {''concurrency'': {''oneOf'': [{''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                           ''type'':
+        ''string''},\n                                                                                          {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                           ''type'':
+        ''string''}]},\n                                                                               {''minimum'':
+        0,\n                                                                                ''type'':
+        ''integer''}]},\n                                                     ''description'':
+        {''minLength'': 1,\n                                                                     ''type'':
+        ''string''},\n                                                     ''name'':
+        {''minLength'': 1,\n                                                              ''type'':
+        ''string''},\n                                                     ''on-complete'':
+        {''oneOf'': [{''minLength'': 1,\n                                                                                ''type'':
+        ''string''},\n                                                                               {''items'':
+        {''oneOf'': [{''minLength'': 1,\n                                                                                                     ''type'':
+        ''string''},\n                                                                                                    {''minProperties'':
+        1,\n                                                                                                     ''patternProperties'':
+        {''^\\\\w+$'': {''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                                                                                 ''type'':
+        ''string''},\n                                                                                                                                                {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                                                                                 ''type'':
+        ''string''}]}},\n                                                                                                     ''type'':
+        ''object''}]},\n                                                                                ''minItems'':
+        1,\n                                                                                ''type'':
+        ''array'',\n                                                                                ''uniqueItems'':
+        True}]},\n                                                     ''on-error'':
+        {''oneOf'': [{''minLength'': 1,\n                                                                             ''type'':
+        ''string''},\n                                                                            {''items'':
+        {''oneOf'': [{''minLength'': 1,\n                                                                                                  ''type'':
+        ''string''},\n                                                                                                 {''minProperties'':
+        1,\n                                                                                                  ''patternProperties'':
+        {''^\\\\w+$'': {''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                                                                              ''type'':
+        ''string''},\n                                                                                                                                             {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                                                                              ''type'':
+        ''string''}]}},\n                                                                                                  ''type'':
+        ''object''}]},\n                                                                             ''minItems'':
+        1,\n                                                                             ''type'':
+        ''array'',\n                                                                             ''uniqueItems'':
+        True}]},\n                                                     ''on-success'':
+        {''oneOf'': [{''minLength'': 1,\n                                                                               ''type'':
+        ''string''},\n                                                                              {''items'':
+        {''oneOf'': [{''minLength'': 1,\n                                                                                                    ''type'':
+        ''string''},\n                                                                                                   {''minProperties'':
+        1,\n                                                                                                    ''patternProperties'':
+        {''^\\\\w+$'': {''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                                                                                ''type'':
+        ''string''},\n                                                                                                                                               {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                                                                                ''type'':
+        ''string''}]}},\n                                                                                                    ''type'':
+        ''object''}]},\n                                                                               ''minItems'':
+        1,\n                                                                               ''type'':
+        ''array'',\n                                                                               ''uniqueItems'':
+        True}]},\n                                                     ''pause-before'':
+        {''oneOf'': [{''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                            ''type'':
+        ''string''},\n                                                                                           {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                            ''type'':
+        ''string''}]},\n                                                                                {''type'':
+        ''boolean''}]},\n                                                     ''requires'':
+        {''oneOf'': [{''minLength'': 1,\n                                                                             ''type'':
+        ''string''},\n                                                                            {''items'':
+        {''minLength'': 1,\n                                                                                       ''type'':
+        ''string''},\n                                                                             ''minItems'':
+        1,\n                                                                             ''type'':
+        ''array'',\n                                                                             ''uniqueItems'':
+        True}]},\n                                                     ''retry'':
+        {''oneOf'': [{''additionalProperties'': False,\n                                                                          ''properties'':
+        {''break-on'': {''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                                                 ''type'':
+        ''string''},\n                                                                                                                {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                                                 ''type'':
+        ''string''}]},\n                                                                                         ''continue-on'':
+        {''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                                                    ''type'':
+        ''string''},\n                                                                                                                   {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                                                    ''type'':
+        ''string''}]},\n                                                                                         ''count'':
+        {''oneOf'': [{''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                                                         ''type'':
+        ''string''},\n                                                                                                                        {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                                                         ''type'':
+        ''string''}]},\n                                                                                                             {''minimum'':
+        0,\n                                                                                                              ''type'':
+        ''integer''}]},\n                                                                                         ''delay'':
+        {''oneOf'': [{''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                                                         ''type'':
+        ''string''},\n                                                                                                                        {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                                                         ''type'':
+        ''string''}]},\n                                                                                                             {''minimum'':
+        0,\n                                                                                                              ''type'':
+        ''integer''}]}},\n                                                                          ''required'':
+        [''delay'',\n                                                                                       ''count''],\n                                                                          ''type'':
+        ''object''},\n                                                                         {''minLength'':
+        1,\n                                                                          ''type'':
+        ''string''}],\n                                                               ''properties'':
+        {''description'': {''minLength'': 1,\n                                                                                              ''type'':
+        ''string''},\n                                                                              ''name'':
+        {''minLength'': 1,\n                                                                                       ''type'':
+        ''string''},\n                                                                              ''tags'':
+        {''items'': {''minLength'': 1,\n                                                                                                 ''type'':
+        ''string''},\n                                                                                       ''minItems'':
+        1,\n                                                                                       ''type'':
+        ''array'',\n                                                                                       ''uniqueItems'':
+        True},\n                                                                              ''version'':
+        {''anyOf'': [{''minLength'': 1,\n                                                                                                     ''type'':
+        ''string''},\n                                                                                                    {''minimum'':
+        0,\n                                                                                                     ''type'':
+        ''integer''},\n                                                                                                    {''minimum'':
+        0.0,\n                                                                                                     ''type'':
+        ''number''}]}}},\n                                                     ''tags'':
+        {''items'': {''minLength'': 1,\n                                                                        ''type'':
+        ''string''},\n                                                              ''minItems'':
+        1,\n                                                              ''type'':
+        ''array'',\n                                                              ''uniqueItems'':
+        True},\n                                                     ''timeout'':
+        {''oneOf'': [{''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                       ''type'':
+        ''string''},\n                                                                                      {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                       ''type'':
+        ''string''}]},\n                                                                           {''minimum'':
+        0,\n                                                                            ''type'':
+        ''integer''}]},\n                                                     ''version'':
+        {''anyOf'': [{''minLength'': 1,\n                                                                            ''type'':
+        ''string''},\n                                                                           {''minimum'':
+        0,\n                                                                            ''type'':
+        ''integer''},\n                                                                           {''minimum'':
+        0.0,\n                                                                            ''type'':
+        ''number''}]},\n                                                     ''wait-after'':
+        {''oneOf'': [{''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                          ''type'':
+        ''string''},\n                                                                                         {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                          ''type'':
+        ''string''}]},\n                                                                              {''minimum'':
+        0,\n                                                                               ''type'':
+        ''integer''}]},\n                                                     ''wait-before'':
+        {''oneOf'': [{''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                           ''type'':
+        ''string''},\n                                                                                          {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                           ''type'':
+        ''string''}]},\n                                                                               {''minimum'':
+        0,\n                                                                                ''type'':
+        ''integer''}]}},\n                                      ''type'': ''object''},\n                    ''tasks'':
+        {''minProperties'': 1,\n                              ''patternProperties'':
+        {''^\\\\w+$'': {''additionalProperties'': False,\n                                                               ''anyOf'':
+        [{''not'': {''required'': [''action'',\n                                                                                               ''workflow''],\n                                                                                  ''type'':
+        ''object''}},\n                                                                         {''oneOf'':
+        [{''required'': [''action''],\n                                                                                     ''type'':
+        ''object''},\n                                                                                    {''required'':
+        [''workflow''],\n                                                                                     ''type'':
+        ''object''}]}],\n                                                               ''properties'':
+        {''action'': {''minLength'': 1,\n                                                                                         ''type'':
+        ''string''},\n                                                                              ''concurrency'':
+        {''oneOf'': [{''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                                                    ''type'':
+        ''string''},\n                                                                                                                   {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                                                    ''type'':
+        ''string''}]},\n                                                                                                        {''minimum'':
+        0,\n                                                                                                         ''type'':
+        ''integer''}]},\n                                                                              ''description'':
+        {''minLength'': 1,\n                                                                                              ''type'':
+        ''string''},\n                                                                              ''input'':
+        {''minProperties'': 1,\n                                                                                        ''patternProperties'':
+        {''^\\\\w+$'': {''anyOf'': [{''type'': ''null''},\n                                                                                                                                   {''type'':
+        ''array''},\n                                                                                                                                   {''type'':
+        ''boolean''},\n                                                                                                                                   {''type'':
+        ''integer''},\n                                                                                                                                   {''type'':
+        ''number''},\n                                                                                                                                   {''type'':
+        ''object''},\n                                                                                                                                   {''type'':
+        ''string''}]}},\n                                                                                        ''type'':
+        ''object''},\n                                                                              ''join'':
+        {''oneOf'': [{''enum'': [''all'',\n                                                                                                           ''one'']},\n                                                                                                 {''minimum'':
+        0,\n                                                                                                  ''type'':
+        ''integer''}]},\n                                                                              ''keep-result'':
+        {''oneOf'': [{''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                                                    ''type'':
+        ''string''},\n                                                                                                                   {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                                                    ''type'':
+        ''string''}]},\n                                                                                                        {''type'':
+        ''boolean''}]},\n                                                                              ''name'':
+        {''minLength'': 1,\n                                                                                       ''type'':
+        ''string''},\n                                                                              ''on-complete'':
+        {''oneOf'': [{''minLength'': 1,\n                                                                                                         ''type'':
+        ''string''},\n                                                                                                        {''items'':
+        {''oneOf'': [{''minLength'': 1,\n                                                                                                                              ''type'':
+        ''string''},\n                                                                                                                             {''minProperties'':
+        1,\n                                                                                                                              ''patternProperties'':
+        {''^\\\\w+$'': {''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                                                                                                          ''type'':
+        ''string''},\n                                                                                                                                                                         {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                                                                                                          ''type'':
+        ''string''}]}},\n                                                                                                                              ''type'':
+        ''object''}]},\n                                                                                                         ''minItems'':
+        1,\n                                                                                                         ''type'':
+        ''array'',\n                                                                                                         ''uniqueItems'':
+        True}]},\n                                                                              ''on-error'':
+        {''oneOf'': [{''minLength'': 1,\n                                                                                                      ''type'':
+        ''string''},\n                                                                                                     {''items'':
+        {''oneOf'': [{''minLength'': 1,\n                                                                                                                           ''type'':
+        ''string''},\n                                                                                                                          {''minProperties'':
+        1,\n                                                                                                                           ''patternProperties'':
+        {''^\\\\w+$'': {''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                                                                                                       ''type'':
+        ''string''},\n                                                                                                                                                                      {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                                                                                                       ''type'':
+        ''string''}]}},\n                                                                                                                           ''type'':
+        ''object''}]},\n                                                                                                      ''minItems'':
+        1,\n                                                                                                      ''type'':
+        ''array'',\n                                                                                                      ''uniqueItems'':
+        True}]},\n                                                                              ''on-success'':
+        {''oneOf'': [{''minLength'': 1,\n                                                                                                        ''type'':
+        ''string''},\n                                                                                                       {''items'':
+        {''oneOf'': [{''minLength'': 1,\n                                                                                                                             ''type'':
+        ''string''},\n                                                                                                                            {''minProperties'':
+        1,\n                                                                                                                             ''patternProperties'':
+        {''^\\\\w+$'': {''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                                                                                                         ''type'':
+        ''string''},\n                                                                                                                                                                        {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                                                                                                         ''type'':
+        ''string''}]}},\n                                                                                                                             ''type'':
+        ''object''}]},\n                                                                                                        ''minItems'':
+        1,\n                                                                                                        ''type'':
+        ''array'',\n                                                                                                        ''uniqueItems'':
+        True}]},\n                                                                              ''pause-before'':
+        {''oneOf'': [{''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                                                     ''type'':
+        ''string''},\n                                                                                                                    {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                                                     ''type'':
+        ''string''}]},\n                                                                                                         {''type'':
+        ''boolean''}]},\n                                                                              ''publish'':
+        {''minProperties'': 1,\n                                                                                          ''patternProperties'':
+        {''^\\\\w+$'': {''anyOf'': [{''type'': ''null''},\n                                                                                                                                     {''type'':
+        ''array''},\n                                                                                                                                     {''type'':
+        ''boolean''},\n                                                                                                                                     {''type'':
+        ''integer''},\n                                                                                                                                     {''type'':
+        ''number''},\n                                                                                                                                     {''type'':
+        ''object''},\n                                                                                                                                     {''type'':
+        ''string''}]}},\n                                                                                          ''type'':
+        ''object''},\n                                                                              ''publish-on-error'':
+        {''minProperties'': 1,\n                                                                                                   ''patternProperties'':
+        {''^\\\\w+$'': {''anyOf'': [{''type'': ''null''},\n                                                                                                                                              {''type'':
+        ''array''},\n                                                                                                                                              {''type'':
+        ''boolean''},\n                                                                                                                                              {''type'':
+        ''integer''},\n                                                                                                                                              {''type'':
+        ''number''},\n                                                                                                                                              {''type'':
+        ''object''},\n                                                                                                                                              {''type'':
+        ''string''}]}},\n                                                                                                   ''type'':
+        ''object''},\n                                                                              ''retry'':
+        {''oneOf'': [{''additionalProperties'': False,\n                                                                                                   ''properties'':
+        {''break-on'': {''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                                                                          ''type'':
+        ''string''},\n                                                                                                                                         {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                                                                          ''type'':
+        ''string''}]},\n                                                                                                                  ''continue-on'':
+        {''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                                                                             ''type'':
+        ''string''},\n                                                                                                                                            {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                                                                             ''type'':
+        ''string''}]},\n                                                                                                                  ''count'':
+        {''oneOf'': [{''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                                                                                  ''type'':
+        ''string''},\n                                                                                                                                                 {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                                                                                  ''type'':
+        ''string''}]},\n                                                                                                                                      {''minimum'':
+        0,\n                                                                                                                                       ''type'':
+        ''integer''}]},\n                                                                                                                  ''delay'':
+        {''oneOf'': [{''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                                                                                  ''type'':
+        ''string''},\n                                                                                                                                                 {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                                                                                  ''type'':
+        ''string''}]},\n                                                                                                                                      {''minimum'':
+        0,\n                                                                                                                                       ''type'':
+        ''integer''}]}},\n                                                                                                   ''required'':
+        [''delay'',\n                                                                                                                ''count''],\n                                                                                                   ''type'':
+        ''object''},\n                                                                                                  {''minLength'':
+        1,\n                                                                                                   ''type'':
+        ''string''}],\n                                                                                        ''properties'':
+        {''description'': {''minLength'': 1,\n                                                                                                                       ''type'':
+        ''string''},\n                                                                                                       ''name'':
+        {''minLength'': 1,\n                                                                                                                ''type'':
+        ''string''},\n                                                                                                       ''tags'':
+        {''items'': {''minLength'': 1,\n                                                                                                                          ''type'':
+        ''string''},\n                                                                                                                ''minItems'':
+        1,\n                                                                                                                ''type'':
+        ''array'',\n                                                                                                                ''uniqueItems'':
+        True},\n                                                                                                       ''version'':
+        {''anyOf'': [{''minLength'': 1,\n                                                                                                                              ''type'':
+        ''string''},\n                                                                                                                             {''minimum'':
+        0,\n                                                                                                                              ''type'':
+        ''integer''},\n                                                                                                                             {''minimum'':
+        0.0,\n                                                                                                                              ''type'':
+        ''number''}]}}},\n                                                                              ''safe-rerun'':
+        {''oneOf'': [{''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                                                   ''type'':
+        ''string''},\n                                                                                                                  {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                                                   ''type'':
+        ''string''}]},\n                                                                                                       {''type'':
+        ''boolean''}]},\n                                                                              ''tags'':
+        {''items'': {''minLength'': 1,\n                                                                                                 ''type'':
+        ''string''},\n                                                                                       ''minItems'':
+        1,\n                                                                                       ''type'':
+        ''array'',\n                                                                                       ''uniqueItems'':
+        True},\n                                                                              ''target'':
+        {''minLength'': 1,\n                                                                                         ''type'':
+        ''string''},\n                                                                              ''timeout'':
+        {''oneOf'': [{''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                                                ''type'':
+        ''string''},\n                                                                                                               {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                                                ''type'':
+        ''string''}]},\n                                                                                                    {''minimum'':
+        0,\n                                                                                                     ''type'':
+        ''integer''}]},\n                                                                              ''type'':
+        {''enum'': [''direct'']},\n                                                                              ''version'':
+        {''anyOf'': [{''minLength'': 1,\n                                                                                                     ''type'':
+        ''string''},\n                                                                                                    {''minimum'':
+        0,\n                                                                                                     ''type'':
+        ''integer''},\n                                                                                                    {''minimum'':
+        0.0,\n                                                                                                     ''type'':
+        ''number''}]},\n                                                                              ''wait-after'':
+        {''oneOf'': [{''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                                                   ''type'':
+        ''string''},\n                                                                                                                  {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                                                   ''type'':
+        ''string''}]},\n                                                                                                       {''minimum'':
+        0,\n                                                                                                        ''type'':
+        ''integer''}]},\n                                                                              ''wait-before'':
+        {''oneOf'': [{''oneOf'': [{''pattern'': ''^({{(.*)}})\\\\s*$'',\n                                                                                                                    ''type'':
+        ''string''},\n                                                                                                                   {''pattern'':
+        ''^<%.*?%>\\\\s*$'',\n                                                                                                                    ''type'':
+        ''string''}]},\n                                                                                                        {''minimum'':
+        0,\n                                                                                                         ''type'':
+        ''integer''}]},\n                                                                              ''with-items'':
+        {''oneOf'': [{''minLength'': 1,\n                                                                                                        ''type'':
+        ''string''},\n                                                                                                       {''items'':
+        {''minLength'': 1,\n                                                                                                                  ''type'':
+        ''string''},\n                                                                                                        ''minItems'':
+        1,\n                                                                                                        ''type'':
+        ''array'',\n                                                                                                        ''uniqueItems'':
+        True}]},\n                                                                              ''workflow'':
+        {''minLength'': 1,\n                                                                                           ''type'':
+        ''string''}},\n                                                               ''type'':
+        ''object''}},\n                              ''type'': ''object''},\n                    ''type'':
+        {''enum'': [''reverse'', ''direct'']},\n                    ''vars'': {''minProperties'':
+        1,\n                             ''patternProperties'': {''^\\\\w+$'': {''anyOf'':
+        [{''type'': ''null''},\n                                                                        {''type'':
+        ''array''},\n                                                                        {''type'':
+        ''boolean''},\n                                                                        {''type'':
+        ''integer''},\n                                                                        {''type'':
+        ''number''},\n                                                                        {''type'':
+        ''object''},\n                                                                        {''type'':
+        ''string''}]}},\n                             ''type'': ''object''}},\n     ''required'':
+        [''tasks'']}\n\nOn instance:\n    {''name'': ''echo_test'', ''type'': ''direct'',
+        ''version'': ''2.0''}"}'
+    http_version: 
+  recorded_at: Thu, 13 Jul 2017 17:19:53 GMT
+recorded_with: VCR 3.0.3
