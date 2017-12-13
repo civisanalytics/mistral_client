@@ -26,15 +26,15 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 29 Aug 2017 22:08:39 GMT
+      - Wed, 13 Dec 2017 21:14:01 GMT
     body:
       encoding: UTF-8
       string: '{"workflows": [{"definition": "---\n  version: \"2.0\"\n  echo_test:\n    type:
         direct\n    tasks:\n      echo:\n        action: std.echo output=\"ok\"\n",
-        "name": "echo_test", "tags": [], "created_at": "2017-08-29 22:08:39", "scope":
-        "private", "input": "", "project_id": "<default-project>", "id": "6bea7b75-700a-4c01-828a-ade0ee03becd"}]}'
+        "name": "echo_test", "tags": [], "created_at": "2017-12-13 21:14:01", "scope":
+        "private", "input": "", "project_id": "<default-project>", "id": "162e7459-4eb4-4791-9a13-29c879bdea22"}]}'
     http_version: 
-  recorded_at: Tue, 29 Aug 2017 22:12:31 GMT
+  recorded_at: Wed, 13 Dec 2017 21:14:01 GMT
 - request:
     method: get
     uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows
@@ -54,22 +54,14 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '9697'
+      - '3920'
       Content-Type:
       - application/json
       Date:
-      - Tue, 29 Aug 2017 22:08:39 GMT
+      - Wed, 13 Dec 2017 21:14:01 GMT
     body:
       encoding: UTF-8
-      string: '{"workflows": [{"definition": "---\nversion: \"2.0\"\n\nstd.delete_instance:\n  type:
-        direct\n\n  input:\n    - instance_id\n\n  description: Deletes VM.\n\n  tasks:\n    delete_vm:\n      description:
-        Destroy VM.\n      action: nova.servers_delete server=<% $.instance_id %>\n      wait-after:
-        10\n      on-success:\n        - find_given_vm\n\n    find_given_vm:\n      description:
-        Checks that VM is already deleted.\n      action: nova.servers_find id=<%
-        $.instance_id %>\n      on-error:\n        - succeed\n\n", "name": "std.delete_instance",
-        "tags": [], "created_at": "2017-08-18 18:49:32", "updated_at": null, "scope":
-        "public", "input": "instance_id", "project_id": "<default-project>", "id":
-        "a10e7b74-1788-46e6-8962-5e07c62372ec"}, {"definition": "---\nversion: ''2.0''\n\nstd.create_instance:\n  type:
+      string: '{"workflows": [{"definition": "---\nversion: ''2.0''\n\nstd.create_instance:\n  type:
         direct\n\n  description: |\n    Creates VM and waits till VM OS is up and
         running.\n\n  input:\n    - name\n    - image_id\n    - flavor_id\n    - ssh_username:
         null\n    - ssh_password: null\n\n    # Name of previously created keypair
@@ -99,79 +91,28 @@ http_interactions:
         %> password=<% $.ssh_password %> host=<% $.vm_ip %>\n      retry:\n        count:
         10\n        delay: 10\n\n    delete_vm:\n      description: Destroy VM.\n      workflow:
         std.delete_instance instance_id=<% $.vm_id %>\n      on-complete:\n        -
-        fail\n", "name": "std.create_instance", "tags": [], "created_at": "2017-08-18
-        18:49:32", "updated_at": null, "scope": "public", "input": "name, image_id,
+        fail\n", "name": "std.create_instance", "tags": [], "created_at": "2017-12-13
+        21:12:17", "updated_at": null, "scope": "public", "input": "name, image_id,
         flavor_id, ssh_username=None, ssh_password=None, key_name=None, security_groups=None,
-        nics=None", "project_id": "<default-project>", "id": "f4e8472c-1f91-404b-a856-3ef5e4e98a7f"},
-        {"definition": "---\nversion: ''2.0''\nplatform_workflow_7_13_874802998b326743901d057f348d671d:\n  tasks:\n    run_this:\n      action:
-        civis.run_job\n      input:\n        job_id: 16\n      on-success:\n      -
-        pause\n      - never_run\n    never_run:\n      action: civis.run_job\n      input:\n        job_id:
-        16\n", "name": "platform_workflow_7_13_874802998b326743901d057f348d671d",
-        "tags": [], "created_at": "2017-08-18 18:59:35", "updated_at": null, "scope":
-        "private", "input": "", "project_id": "<default-project>", "id": "e15d6a2a-d75c-422c-beb0-37c64490a0cb"},
-        {"definition": "---\nversion: ''2.0''\nplatform_workflow_7_14_29f6cd6834cd6e74c261b1e601bd919c:\n  tasks:\n    run_this:\n      action:
-        civis.run_job\n      input:\n        job_id: 16\n      on-success:\n      -
-        pause\n      - never_run\n    never_run:\n      action: civis.run_job\n      input:\n        job_id:
-        16\n", "name": "platform_workflow_7_14_29f6cd6834cd6e74c261b1e601bd919c",
-        "tags": [], "created_at": "2017-08-18 20:09:38", "updated_at": null, "scope":
-        "private", "input": "", "project_id": "<default-project>", "id": "4bc0693f-6d50-4024-be07-93bba767701e"},
-        {"definition": "---\nversion: ''2.0''\nplatform_workflow_10_15_6d2de25da7ef68cecad177497780cc1c:\n  tasks:\n    run_this:\n      action:
-        civis.run_job\n      input:\n        job_id: 16\n      on-success:\n      -
-        also_run\n    also_run:\n      pause-before: true\n      action: civis.run_job\n      input:\n        job_id:
-        16\n", "name": "platform_workflow_10_15_6d2de25da7ef68cecad177497780cc1c",
-        "tags": [], "created_at": "2017-08-21 02:52:45", "updated_at": null, "scope":
-        "private", "input": "", "project_id": "<default-project>", "id": "5c3c3b01-1884-4199-a7ac-4a67efb96035"},
-        {"definition": "---\nversion: ''2.0''\nplatform_workflow_5_16_043b69b252835a58a745a098e8c30a8e:\n  tasks:\n    task_name_1:\n      action:
-        civis.run_job job_id=16\n      on-success:\n      - task_name_2\n      - task_name_3\n    task_name_2:\n      action:
-        civis.run_job job_id=24\n    task_name_3:\n      action: civis.run_job job_id=25\n",
-        "name": "platform_workflow_5_16_043b69b252835a58a745a098e8c30a8e", "tags":
-        [], "created_at": "2017-08-22 17:30:04", "updated_at": null, "scope": "private",
-        "input": "", "project_id": "<default-project>", "id": "cf0cdc41-2522-4d39-b1ce-0dd75c32a765"},
-        {"definition": "---\nversion: ''2.0''\nplatform_workflow_10_17_a9402864a0b3a2a58f790743ffad4554:\n  tasks:\n    run_this:\n      action:
-        civis.run_job\n      input:\n        job_id: 16\n      on-success:\n      -
-        also_run\n    also_run:\n      pause-before: true\n      action: civis.run_job\n      input:\n        job_id:
-        16\n", "name": "platform_workflow_10_17_a9402864a0b3a2a58f790743ffad4554",
-        "tags": [], "created_at": "2017-08-23 20:09:00", "updated_at": null, "scope":
-        "private", "input": "", "project_id": "<default-project>", "id": "8f66fd40-c7b8-49d7-9bb4-126733d611f2"},
-        {"definition": "---\nversion: ''2.0''\nplatform_workflow_5_18_502628fce05f56232a7b83bbec04dad3:\n  tasks:\n    task_name_1:\n      action:
-        civis.run_job job_id=16\n      on-success:\n      - task_name_2\n      - task_name_3\n    task_name_2:\n      action:
-        civis.run_job job_id=24\n    task_name_3:\n      action: civis.run_job job_id=25\n",
-        "name": "platform_workflow_5_18_502628fce05f56232a7b83bbec04dad3", "tags":
-        [], "created_at": "2017-08-24 14:19:02", "updated_at": null, "scope": "private",
-        "input": "", "project_id": "<default-project>", "id": "a87676fe-209d-4051-9db1-8b5549c03b34"},
-        {"definition": "---\nversion: ''2.0''\nplatform_workflow_5_19_4b0879ed73b60112fa7067dbaa4e2828:\n  tasks:\n    task_name_1:\n      action:
-        civis.run_job job_id=16\n      on-success:\n      - task_name_2\n      - task_name_3\n    task_name_2:\n      action:
-        civis.run_job job_id=24\n    task_name_3:\n      action: civis.run_job job_id=25\n",
-        "name": "platform_workflow_5_19_4b0879ed73b60112fa7067dbaa4e2828", "tags":
-        [], "created_at": "2017-08-24 18:02:39", "updated_at": null, "scope": "private",
-        "input": "", "project_id": "<default-project>", "id": "3322e6dc-52df-4c7e-836d-ad48b4a43357"},
-        {"definition": "---\nversion: ''2.0''\nplatform_workflow_1_20_dbe864f2710ad168e5a014b7c990abf9:\n  tasks:\n    task_name_1:\n      action:
-        civis.run_job job_id=16\n      on-success:\n      - task_name_2\n    task_name_2:\n      action:
-        civis.run_job job_id=17\n      on-success:\n      - task_name_3\n    task_name_3:\n      action:
-        civis.run_job job_id=18\n", "name": "platform_workflow_1_20_dbe864f2710ad168e5a014b7c990abf9",
-        "tags": [], "created_at": "2017-08-25 14:02:50", "updated_at": null, "scope":
-        "private", "input": "", "project_id": "<default-project>", "id": "7cf0c332-0106-4674-94d1-9b43c384c717"},
-        {"definition": "---\nversion: ''2.0''\nplatform_workflow_11_22_8cda16de79142519e92c0b715a682aad:\n  tasks:\n    task_1:\n      action:
-        civis.run_job\n      input:\n        job_id: 16\n      on-success:\n      -
-        task_2\n    task_2:\n      action: civis.run_job\n      input:\n        job_id:
-        16\n", "name": "platform_workflow_11_22_8cda16de79142519e92c0b715a682aad",
-        "tags": [], "created_at": "2017-08-25 16:04:26", "updated_at": null, "scope":
-        "private", "input": "", "project_id": "<default-project>", "id": "dfb0bc41-d956-42e9-bed3-daa408c799aa"},
-        {"definition": "---\nversion: ''2.0''\nplatform_workflow_11_23_8d8172ec1bdfe8b63eaa72b2a78e8294:\n  tasks:\n    task_1:\n      action:
-        civis.run_job\n      input:\n        job_id: 16\n      on-success:\n      -
-        task_2\n    task_2:\n      action: civis.run_job\n      input:\n        job_id:
-        16\n", "name": "platform_workflow_11_23_8d8172ec1bdfe8b63eaa72b2a78e8294",
-        "tags": [], "created_at": "2017-08-29 19:28:00", "updated_at": null, "scope":
-        "private", "input": "", "project_id": "<default-project>", "id": "79ca6213-5d77-4d16-8c70-216e0725d89d"},
-        {"definition": "---\n  version: \"2.0\"\n  echo_test:\n    type: direct\n    tasks:\n      echo:\n        action:
-        std.echo output=\"ok\"\n", "name": "echo_test", "tags": [], "created_at":
-        "2017-08-29 22:08:39", "updated_at": null, "scope": "private", "input": "",
-        "project_id": "<default-project>", "id": "6bea7b75-700a-4c01-828a-ade0ee03becd"}]}'
+        nics=None", "project_id": "<default-project>", "id": "e1985316-a54b-46d4-bb67-1860cdbcf237"},
+        {"definition": "---\nversion: \"2.0\"\n\nstd.delete_instance:\n  type: direct\n\n  input:\n    -
+        instance_id\n\n  description: Deletes VM.\n\n  tasks:\n    delete_vm:\n      description:
+        Destroy VM.\n      action: nova.servers_delete server=<% $.instance_id %>\n      wait-after:
+        10\n      on-success:\n        - find_given_vm\n\n    find_given_vm:\n      description:
+        Checks that VM is already deleted.\n      action: nova.servers_find id=<%
+        $.instance_id %>\n      on-error:\n        - succeed\n\n", "name": "std.delete_instance",
+        "tags": [], "created_at": "2017-12-13 21:12:17", "updated_at": null, "scope":
+        "public", "input": "instance_id", "project_id": "<default-project>", "id":
+        "f266724a-efca-4fd8-b10d-abb47e9bd673"}, {"definition": "---\n  version: \"2.0\"\n  echo_test:\n    type:
+        direct\n    tasks:\n      echo:\n        action: std.echo output=\"ok\"\n",
+        "name": "echo_test", "tags": [], "created_at": "2017-12-13 21:14:01", "updated_at":
+        null, "scope": "private", "input": "", "project_id": "<default-project>",
+        "id": "162e7459-4eb4-4791-9a13-29c879bdea22"}]}'
     http_version: 
-  recorded_at: Tue, 29 Aug 2017 22:12:31 GMT
+  recorded_at: Wed, 13 Dec 2017 21:14:01 GMT
 - request:
     method: delete
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows/6bea7b75-700a-4c01-828a-ade0ee03becd
+    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows/162e7459-4eb4-4791-9a13-29c879bdea22
     body:
       encoding: US-ASCII
       string: ''
@@ -188,10 +129,10 @@ http_interactions:
       message: No Content
     headers:
       Date:
-      - Tue, 29 Aug 2017 22:08:40 GMT
+      - Wed, 13 Dec 2017 21:14:02 GMT
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Tue, 29 Aug 2017 22:12:32 GMT
+  recorded_at: Wed, 13 Dec 2017 21:14:02 GMT
 recorded_with: VCR 3.0.3

@@ -26,21 +26,21 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 11 Sep 2017 18:16:12 GMT
+      - Wed, 13 Dec 2017 21:13:38 GMT
     body:
       encoding: UTF-8
       string: '{"workflows": [{"definition": "---\n  version: \"2.0\"\n  echo_test:\n    type:
         direct\n    tasks:\n      echo:\n        action: std.echo output=\"ok\"\n",
-        "name": "echo_test", "tags": [], "created_at": "2017-09-11 18:16:12", "scope":
-        "private", "input": "", "project_id": "<default-project>", "id": "67145af9-4ac2-4fdf-bb8a-fe0d3aada0ba"}]}'
+        "name": "echo_test", "tags": [], "created_at": "2017-12-13 21:13:38", "scope":
+        "private", "input": "", "project_id": "<default-project>", "id": "774bb258-7e8b-441d-9a98-8f0354edb1d1"}]}'
     http_version: 
-  recorded_at: Mon, 11 Sep 2017 18:17:39 GMT
+  recorded_at: Wed, 13 Dec 2017 21:13:38 GMT
 - request:
     method: post
     uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/executions
     body:
       encoding: UTF-8
-      string: '{"workflow_id":"67145af9-4ac2-4fdf-bb8a-fe0d3aada0ba"}'
+      string: '{"workflow_id":"774bb258-7e8b-441d-9a98-8f0354edb1d1"}'
     headers:
       Content-Type:
       - application/json
@@ -54,15 +54,15 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 11 Sep 2017 18:16:12 GMT
+      - Wed, 13 Dec 2017 21:13:38 GMT
     body:
       encoding: UTF-8
-      string: '{"state_info": null, "created_at": "2017-09-11 18:16:12", "description":
+      string: '{"state_info": null, "created_at": "2017-12-13 21:13:38", "description":
         "", "state": "RUNNING", "workflow_name": "echo_test", "task_execution_id":
-        null, "updated_at": "2017-09-11 18:16:12", "workflow_id": "67145af9-4ac2-4fdf-bb8a-fe0d3aada0ba",
-        "params": "{}", "output": "{}", "input": "{}", "id": "4bad35d3-5fd6-4f92-98c6-acb963f9cae3"}'
+        null, "updated_at": "2017-12-13 21:13:38", "workflow_id": "774bb258-7e8b-441d-9a98-8f0354edb1d1",
+        "params": "{}", "output": "{}", "input": "{}", "id": "2448f9ab-9045-48c6-92ad-9f0a617f61ba"}'
     http_version: 
-  recorded_at: Mon, 11 Sep 2017 18:17:39 GMT
+  recorded_at: Wed, 13 Dec 2017 21:13:38 GMT
 - request:
     method: get
     uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/executions
@@ -82,100 +82,126 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '6752'
+      - '8787'
       Content-Type:
       - application/json
       Date:
-      - Mon, 11 Sep 2017 18:16:13 GMT
+      - Wed, 13 Dec 2017 21:13:38 GMT
     body:
       encoding: UTF-8
-      string: '{"executions": [{"state_info": null, "created_at": "2017-09-11 17:58:08",
+      string: '{"executions": [{"state_info": null, "created_at": "2017-12-13 21:12:19",
         "description": "", "state": "SUCCESS", "workflow_name": "echo_test", "task_execution_id":
-        null, "updated_at": "2017-09-11 17:58:09", "workflow_id": "4ef234ec-79a2-4853-a2ed-1300891bfa45",
-        "params": "{}", "input": "{}", "id": "909116b7-3e70-490f-b6d9-d0c9dd31578c"},
-        {"state_info": null, "created_at": "2017-09-11 17:58:10", "description": "",
+        null, "updated_at": "2017-12-13 21:12:20", "workflow_id": "dfab9090-e7bd-40f3-8f6e-d41aada31eb3",
+        "params": "{\"task_name\": \"echo\"}", "input": "{}", "id": "2264e8d5-51b9-4f71-a332-acab4512a063"},
+        {"state_info": null, "created_at": "2017-12-13 21:12:22", "description": "",
         "state": "SUCCESS", "workflow_name": "echo_test", "task_execution_id": null,
-        "updated_at": "2017-09-11 17:58:10", "workflow_id": "5b635721-f43d-4a12-9857-f0e40ba890a1",
-        "params": "{}", "input": "{}", "id": "546285e3-3d0c-4737-8053-d0f568e83181"},
-        {"state_info": null, "created_at": "2017-09-11 17:58:11", "description": "",
-        "state": "SUCCESS", "workflow_name": "echo_test", "task_execution_id": null,
-        "updated_at": "2017-09-11 17:58:11", "workflow_id": "f6862548-e142-4980-a522-8c5ea1c7f02e",
-        "params": "{\"env\": {\"foo\": \"bar\"}}", "input": "{}", "id": "7b49dec6-7c6a-4072-843e-3b5d3e293454"},
-        {"state_info": null, "created_at": "2017-09-11 17:58:12", "description": "",
-        "state": "SUCCESS", "workflow_name": "echo_test", "task_execution_id": null,
-        "updated_at": "2017-09-11 17:58:12", "workflow_id": "696877b1-7b39-4b5b-8a91-36519c3ae9b0",
-        "params": "{\"task_name\": \"echo\"}", "input": "{}", "id": "687e5d49-ca0e-4d92-93a4-877abc3777aa"},
-        {"state_info": null, "created_at": "2017-09-11 18:05:38", "description": "",
-        "state": "SUCCESS", "workflow_name": "echo_test", "task_execution_id": null,
-        "updated_at": "2017-09-11 18:05:38", "workflow_id": "d6acff0e-a75f-49e4-8dbd-114cd7882adc",
-        "params": "{}", "input": "{}", "id": "5ab4550f-d9a6-4af9-9834-3168056b392b"},
-        {"state_info": null, "created_at": "2017-09-11 18:05:39", "description": "",
-        "state": "SUCCESS", "workflow_name": "echo_test", "task_execution_id": null,
-        "updated_at": "2017-09-11 18:05:40", "workflow_id": "2ede9c4f-080c-49cc-975c-2b9fc7f0980e",
-        "params": "{}", "input": "{}", "id": "9ae1e3fb-ce59-4441-a421-3ba1b1e2c441"},
-        {"state_info": null, "created_at": "2017-09-11 18:05:40", "description": "",
-        "state": "SUCCESS", "workflow_name": "echo_test", "task_execution_id": null,
-        "updated_at": "2017-09-11 18:05:41", "workflow_id": "0f91907d-e519-4184-93a3-39219e444819",
-        "params": "{\"env\": {\"foo\": \"bar\"}}", "input": "{}", "id": "6c8ec4f4-3f7e-4a78-977d-950028432a74"},
-        {"state_info": null, "created_at": "2017-09-11 18:05:41", "description": "",
-        "state": "SUCCESS", "workflow_name": "echo_test", "task_execution_id": null,
-        "updated_at": "2017-09-11 18:05:42", "workflow_id": "7aaee097-ba94-47b0-8a9f-5ca72c52a461",
-        "params": "{\"task_name\": \"echo\"}", "input": "{}", "id": "45caa7e3-de2b-4b57-8248-68adb708a2ad"},
-        {"state_info": null, "created_at": "2017-09-11 18:05:43", "description": "",
-        "state": "SUCCESS", "workflow_name": "echo_test", "task_execution_id": null,
-        "updated_at": "2017-09-11 18:05:43", "workflow_id": "8691db91-9a22-470e-8a85-6d67abe8c767",
+        "updated_at": "2017-12-13 21:12:22", "workflow_id": "06cfe217-3c55-434d-ad9d-5666940555c5",
         "params": "{\"task_name\": \"echo\", \"env\": {\"foo\": \"bar\"}}", "input":
-        "{}", "id": "ce9f9ad4-c8ad-4bdf-94ae-703549feb47f"}, {"state_info": null,
-        "created_at": "2017-09-11 18:05:44", "description": "", "state": "SUCCESS",
-        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-09-11
-        18:05:44", "workflow_id": "9f03e432-d86b-45c3-aca7-f4e0c62c9b43", "params":
-        "{}", "input": "{}", "id": "5ed87370-f538-479d-89f3-61631b2bece0"}, {"state_info":
-        null, "created_at": "2017-09-11 18:05:45", "description": "", "state": "SUCCESS",
-        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-09-11
-        18:05:45", "workflow_id": "85e5db69-343c-47a6-83d9-59f5a4bc4924", "params":
-        "{}", "input": "{}", "id": "e2e068d2-e448-4532-92ef-e7886f810086"}, {"state_info":
-        null, "created_at": "2017-09-11 18:05:48", "description": "", "state": "CANCELLED",
-        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-09-11
-        18:05:48", "workflow_id": "af2dd11c-0289-47b4-8520-2b593a2ea91f", "params":
-        "{}", "input": "{}", "id": "74573fcc-fbff-4b86-9245-29c06f60d49b"}, {"state_info":
-        null, "created_at": "2017-09-11 18:05:50", "description": "", "state": "SUCCESS",
-        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-09-11
-        18:05:50", "workflow_id": "9c293f8d-8ac1-43b5-8c11-5b83675dc0b4", "params":
-        "{}", "input": "{}", "id": "bae2a3c1-c289-468c-a0e6-5caaf7b89df0"}, {"state_info":
-        null, "created_at": "2017-09-11 18:16:05", "description": "", "state": "SUCCESS",
-        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-09-11
-        18:16:06", "workflow_id": "fc47b0af-979a-47a7-a12c-0918a898b274", "params":
-        "{}", "input": "{}", "id": "57d5d438-f717-4773-9a13-22da2d171538"}, {"state_info":
-        null, "created_at": "2017-09-11 18:16:07", "description": "", "state": "SUCCESS",
-        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-09-11
-        18:16:07", "workflow_id": "a546899c-ad58-4ce5-b529-400e50af0047", "params":
-        "{}", "input": "{}", "id": "28a26f43-7e53-4add-8a58-2abad1f714bb"}, {"state_info":
-        null, "created_at": "2017-09-11 18:16:08", "description": "", "state": "SUCCESS",
-        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-09-11
-        18:16:08", "workflow_id": "c7af25df-b640-4925-b21c-45eaf30434db", "params":
-        "{\"env\": {\"foo\": \"bar\"}}", "input": "{}", "id": "b0879eae-99b0-4320-b98e-d928785b4fa8"},
-        {"state_info": null, "created_at": "2017-09-11 18:16:09", "description": "",
+        "{}", "id": "30cf3672-18ea-4521-9fe1-72360d6baa3a"}, {"state_info": null,
+        "created_at": "2017-12-13 21:12:23", "description": "", "state": "SUCCESS",
+        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-12-13
+        21:12:23", "workflow_id": "14006474-7875-476d-bbc8-e511b54f7ddc", "params":
+        "{}", "input": "{}", "id": "eb3a6074-9609-4327-b221-98fdb78b4c49"}, {"state_info":
+        null, "created_at": "2017-12-13 21:12:24", "description": "", "state": "SUCCESS",
+        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-12-13
+        21:12:24", "workflow_id": "b562325f-ac53-4a2e-b95d-3cdef1ecc582", "params":
+        "{}", "input": "{}", "id": "f1bdd460-27b2-4c70-bcf7-2febce5103a7"}, {"state_info":
+        null, "created_at": "2017-12-13 21:12:28", "description": "", "state": "CANCELLED",
+        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-12-13
+        21:12:28", "workflow_id": "1329dade-e796-4384-9a5d-6bdbb83903b9", "params":
+        "{}", "input": "{}", "id": "2b38cbbd-b83f-485b-be64-8decbfa06d07"}, {"state_info":
+        null, "created_at": "2017-12-13 21:12:29", "description": "", "state": "SUCCESS",
+        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-12-13
+        21:12:29", "workflow_id": "b9e9f8bf-915c-4efc-957c-4b795d775733", "params":
+        "{}", "input": "{}", "id": "aceeae2b-8617-46ea-931f-fd289ac07993"}, {"state_info":
+        null, "created_at": "2017-12-13 21:12:30", "description": "", "state": "SUCCESS",
+        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-12-13
+        21:12:30", "workflow_id": "041bf844-0b08-48cf-96ea-16e39986a8bc", "params":
+        "{}", "input": "{}", "id": "c3169e73-5c1d-42f0-a7e3-73f90e102767"}, {"state_info":
+        null, "created_at": "2017-12-13 21:12:31", "description": "", "state": "SUCCESS",
+        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-12-13
+        21:12:31", "workflow_id": "9d28de86-e152-4ef3-ae0d-f212cb45c495", "params":
+        "{}", "input": "{}", "id": "e768c566-41e3-48ff-8004-771aa847f6db"}, {"state_info":
+        null, "created_at": "2017-12-13 21:12:32", "description": "", "state": "SUCCESS",
+        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-12-13
+        21:12:33", "workflow_id": "8d215671-a57c-48d0-9930-e9858113bf89", "params":
+        "{}", "input": "{}", "id": "78b461cd-d8cc-4b8d-a116-301e8837b102"}, {"state_info":
+        "Failure caused by error in tasks: echo\n\n  echo [task_ex_id=563a3430-879a-4bee-99a2-f66025a077e0]
+        -> Failed to run action [action_ex_id=7ac08af5-efa9-4bdb-8fc2-f7a621083e0d,
+        action_cls=''<class ''mistral.actions.action_factory.FailAction''>'', attributes=''{}'',
+        params=''{}'']\n Fail action expected exception.\n    [action_ex_id=7ac08af5-efa9-4bdb-8fc2-f7a621083e0d,
+        idx=0]: Failed to run action [action_ex_id=7ac08af5-efa9-4bdb-8fc2-f7a621083e0d,
+        action_cls=''<class ''mistral.actions.action_factory.FailAction''>'', attributes=''{}'',
+        params=''{}'']\n Fail action expected exception.\n", "created_at": "2017-12-13
+        21:12:36", "description": "", "state": "ERROR", "workflow_name": "echo_test",
+        "task_execution_id": null, "updated_at": "2017-12-13 21:12:37", "workflow_id":
+        "a01968ac-9559-4e5e-9ea5-02903fc3b32d", "params": "{}", "input": "{}", "id":
+        "bd843ab9-04a7-4d8d-92d3-2adcb0208c72"}, {"state_info": "Failure caused by
+        error in tasks: echo\n\n  echo [task_ex_id=a760d58e-b6c8-4ab7-8452-8acd0506daae]
+        -> Failed to run action [action_ex_id=89d60879-2386-4310-8eb1-eb8d0ff54bd9,
+        action_cls=''<class ''mistral.actions.action_factory.FailAction''>'', attributes=''{}'',
+        params=''{}'']\n Fail action expected exception.\n    [action_ex_id=89d60879-2386-4310-8eb1-eb8d0ff54bd9,
+        idx=0]: Failed to run action [action_ex_id=89d60879-2386-4310-8eb1-eb8d0ff54bd9,
+        action_cls=''<class ''mistral.actions.action_factory.FailAction''>'', attributes=''{}'',
+        params=''{}'']\n Fail action expected exception.\n", "created_at": "2017-12-13
+        21:12:39", "description": "", "state": "ERROR", "workflow_name": "echo_test",
+        "task_execution_id": null, "updated_at": "2017-12-13 21:12:40", "workflow_id":
+        "39492cb5-f054-4675-a33f-fe0d654c7b12", "params": "{}", "input": "{}", "id":
+        "f11fc53f-c19a-4158-a6aa-6a33305d3781"}, {"state_info": null, "created_at":
+        "2017-12-13 21:13:12", "description": "", "state": "RUNNING", "workflow_name":
+        "echo_test", "task_execution_id": null, "updated_at": "2017-12-13 21:13:12",
+        "workflow_id": "8cf4c353-cbd6-4223-8702-932de2d05b23", "params": "{}", "input":
+        "{}", "id": "9f1a0b17-b234-48fc-bc25-cf008bb51b33"}, {"state_info": null,
+        "created_at": "2017-12-13 21:13:14", "description": "", "state": "SUCCESS",
+        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-12-13
+        21:13:16", "workflow_id": "0b4d801d-a29b-4529-8a7c-d73e04bbe475", "params":
+        "{}", "input": "{}", "id": "5649e853-c990-4150-9556-c609449a63a7"}, {"state_info":
+        null, "created_at": "2017-12-13 21:13:16", "description": "", "state": "RUNNING",
+        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-12-13
+        21:13:16", "workflow_id": "ec28a809-8571-4379-b4a6-f9bb9da0a95f", "params":
+        "{}", "input": "{}", "id": "0632d3fc-9676-43f9-97be-d21e1d250617"}, {"state_info":
+        null, "created_at": "2017-12-13 21:13:19", "description": "", "state": "RUNNING",
+        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-12-13
+        21:13:19", "workflow_id": "b130bd2b-613e-438e-956a-7a15262d0ae2", "params":
+        "{}", "input": "{}", "id": "d9b43edf-d9d7-4843-93e8-9db97483258b"}, {"state_info":
+        null, "created_at": "2017-12-13 21:13:21", "description": "", "state": "RUNNING",
+        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-12-13
+        21:13:21", "workflow_id": "7e3c2a54-f9a8-45d8-978a-9c259548aae2", "params":
+        "{}", "input": "{}", "id": "5f963e84-9588-4427-9839-805d3b3142dd"}, {"state_info":
+        null, "created_at": "2017-12-13 21:13:28", "description": "", "state": "SUCCESS",
+        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-12-13
+        21:13:29", "workflow_id": "2fe190ea-9b37-46b3-903e-04f7fb969248", "params":
+        "{}", "input": "{}", "id": "1d48884a-17a3-4ec8-8570-e94546af14dd"}, {"state_info":
+        null, "created_at": "2017-12-13 21:13:30", "description": "", "state": "SUCCESS",
+        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-12-13
+        21:13:31", "workflow_id": "421a8347-0631-4321-8dff-d11a096dce5e", "params":
+        "{}", "input": "{}", "id": "a6b8a886-cd56-49fa-8360-bfc131e673b8"}, {"state_info":
+        null, "created_at": "2017-12-13 21:13:31", "description": "", "state": "SUCCESS",
+        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-12-13
+        21:13:32", "workflow_id": "36421955-7dde-47ca-b58a-ebf6f1727645", "params":
+        "{\"env\": {\"foo\": \"bar\"}}", "input": "{}", "id": "a2eb93d6-7596-4b4d-81dc-ac8d06525568"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:33", "description": "",
         "state": "SUCCESS", "workflow_name": "echo_test", "task_execution_id": null,
-        "updated_at": "2017-09-11 18:16:09", "workflow_id": "23c794b0-beb7-4d9a-b8e7-c5cb4976951c",
-        "params": "{\"task_name\": \"echo\"}", "input": "{}", "id": "88691539-540b-4657-880d-e47b5d40d275"},
-        {"state_info": null, "created_at": "2017-09-11 18:16:10", "description": "",
+        "updated_at": "2017-12-13 21:13:34", "workflow_id": "08eb8971-7e9c-4192-8113-0197c03f5da5",
+        "params": "{\"task_name\": \"echo\"}", "input": "{}", "id": "bbe49bc8-49f9-4346-9d80-f98ee74697cf"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:35", "description": "",
         "state": "SUCCESS", "workflow_name": "echo_test", "task_execution_id": null,
-        "updated_at": "2017-09-11 18:16:10", "workflow_id": "b3d79c8d-7916-4c87-99bf-9f596ccda4de",
+        "updated_at": "2017-12-13 21:13:36", "workflow_id": "9400d853-1c9a-44ed-a3a8-018e97d101a0",
         "params": "{\"task_name\": \"echo\", \"env\": {\"foo\": \"bar\"}}", "input":
-        "{}", "id": "5348ae6c-aab7-4db2-b3f6-c09c9e92f004"}, {"state_info": null,
-        "created_at": "2017-09-11 18:16:11", "description": "", "state": "SUCCESS",
-        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-09-11
-        18:16:12", "workflow_id": "9c30d8ab-9636-4fcb-8b79-eed22c4cb917", "params":
-        "{}", "input": "{}", "id": "980ac5cd-4a51-45ad-89f5-9f18cbbe91fa"}, {"state_info":
-        null, "created_at": "2017-09-11 18:16:12", "description": "", "state": "RUNNING",
-        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-09-11
-        18:16:12", "workflow_id": "67145af9-4ac2-4fdf-bb8a-fe0d3aada0ba", "params":
-        "{}", "input": "{}", "id": "4bad35d3-5fd6-4f92-98c6-acb963f9cae3"}]}'
+        "{}", "id": "53c65076-7213-44fe-852d-e137cd855599"}, {"state_info": null,
+        "created_at": "2017-12-13 21:13:37", "description": "", "state": "SUCCESS",
+        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-12-13
+        21:13:37", "workflow_id": "0d78c478-0fb2-4db9-8a1d-a56f990118b9", "params":
+        "{}", "input": "{}", "id": "39bf353e-a11c-4df9-be63-8616a77dc176"}, {"state_info":
+        null, "created_at": "2017-12-13 21:13:38", "description": "", "state": "RUNNING",
+        "workflow_name": "echo_test", "task_execution_id": null, "updated_at": "2017-12-13
+        21:13:38", "workflow_id": "774bb258-7e8b-441d-9a98-8f0354edb1d1", "params":
+        "{}", "input": "{}", "id": "2448f9ab-9045-48c6-92ad-9f0a617f61ba"}]}'
     http_version: 
-  recorded_at: Mon, 11 Sep 2017 18:17:39 GMT
+  recorded_at: Wed, 13 Dec 2017 21:13:38 GMT
 - request:
     method: delete
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows/67145af9-4ac2-4fdf-bb8a-fe0d3aada0ba
+    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows/774bb258-7e8b-441d-9a98-8f0354edb1d1
     body:
       encoding: US-ASCII
       string: ''
@@ -192,10 +218,10 @@ http_interactions:
       message: No Content
     headers:
       Date:
-      - Mon, 11 Sep 2017 18:16:14 GMT
+      - Wed, 13 Dec 2017 21:13:39 GMT
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Mon, 11 Sep 2017 18:17:40 GMT
+  recorded_at: Wed, 13 Dec 2017 21:13:39 GMT
 recorded_with: VCR 3.0.3

@@ -64,6 +64,31 @@ describe MistralClient::Execution, vcr: true do
           expect(ex.params['env']).to eq(env_def['variables'])
         end
       end
+
+      context 'with an environment and an input' do
+        let!(:env) { MistralClient::Environment.new(client, env_def.to_yaml) }
+
+        after(:each) do
+          env.delete!
+        end
+
+        skip 'creates an execution using the environment and the input' do
+
+          input = {
+            'editor' => 'vim',
+            'vc' => 'git'
+          }
+
+          ex = MistralClient::Execution.new(
+            client,
+            workflow_id: workflow.id,
+            env: env_def['name'],
+            input: input
+          )
+          expect(ex.params['env']).to eq(env_def['variables'])
+          expect(ex.input).to eq(input)
+        end
+      end
     end
 
     context 'for a reverse workflow' do
@@ -75,7 +100,7 @@ describe MistralClient::Execution, vcr: true do
         tasks:
           echo:
             action: std.echo output="ok"
-    '
+        '
       end
 
       context 'with a target task name' do

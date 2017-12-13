@@ -27,19 +27,19 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 29 Aug 2017 22:08:43 GMT
+      - Wed, 13 Dec 2017 21:14:12 GMT
     body:
       encoding: UTF-8
       string: '{"workflows": [{"definition": "---\n  version: \"2.0\"\n  echo_test:\n    type:
         direct\n    tasks:\n      echo: &def\n        action: std.echo output=\"ok\"\n      echo2:
-        *def\n", "name": "echo_test", "tags": [], "created_at": "2017-08-29 22:08:43",
+        *def\n", "name": "echo_test", "tags": [], "created_at": "2017-12-13 21:14:12",
         "scope": "private", "input": "", "project_id": "<default-project>", "id":
-        "22851877-5ee3-4d48-87ad-e3238aa0ed7f"}]}'
+        "1f65efaf-90d2-4d8e-923b-c4b42c54d7fb"}]}'
     http_version: 
-  recorded_at: Tue, 29 Aug 2017 22:12:35 GMT
+  recorded_at: Wed, 13 Dec 2017 21:14:12 GMT
 - request:
     method: delete
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows/22851877-5ee3-4d48-87ad-e3238aa0ed7f
+    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows/1f65efaf-90d2-4d8e-923b-c4b42c54d7fb
     body:
       encoding: US-ASCII
       string: ''
@@ -56,10 +56,10 @@ http_interactions:
       message: No Content
     headers:
       Date:
-      - Tue, 29 Aug 2017 22:08:44 GMT
+      - Wed, 13 Dec 2017 21:14:13 GMT
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Tue, 29 Aug 2017 22:12:36 GMT
+  recorded_at: Wed, 13 Dec 2017 21:14:13 GMT
 recorded_with: VCR 3.0.3
