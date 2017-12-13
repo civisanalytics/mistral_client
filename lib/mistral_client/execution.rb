@@ -18,6 +18,7 @@ module MistralClient
     include MistralClient::Mixins::Definable
     include MistralClient::Mixins::Deletable
 
+    # rubocop:disable Metrics/ParameterLists
     def initialize(server, workflow_id: nil, env: nil, task_name: nil,
                    id: nil, input: nil)
       set_attributes(server, workflow_id, env, task_name, id, input)

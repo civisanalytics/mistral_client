@@ -26,10 +26,10 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 11 Sep 2017 18:37:55 GMT
+      - Wed, 13 Dec 2017 21:14:04 GMT
     body:
       encoding: UTF-8
       string: '{"valid": true}'
     http_version: 
-  recorded_at: Mon, 11 Sep 2017 18:39:21 GMT
+  recorded_at: Wed, 13 Dec 2017 21:14:04 GMT
 recorded_with: VCR 3.0.3

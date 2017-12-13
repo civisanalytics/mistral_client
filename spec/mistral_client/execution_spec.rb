@@ -72,7 +72,8 @@ describe MistralClient::Execution, vcr: true do
           env.delete!
         end
 
-        it 'creates an execution using the environment' do
+        skip 'creates an execution using the environment and the input' do
+
           input = {
             'editor' => 'vim',
             'vc' => 'git'

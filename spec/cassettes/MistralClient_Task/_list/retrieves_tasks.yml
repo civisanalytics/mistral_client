@@ -26,21 +26,21 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 13 Jul 2017 17:18:56 GMT
+      - Wed, 13 Dec 2017 21:13:43 GMT
     body:
       encoding: UTF-8
       string: '{"workflows": [{"definition": "---\n  version: \"2.0\"\n  echo_test:\n    type:
         direct\n    tasks:\n      echo:\n        action: std.echo output=\"ok\"\n",
-        "name": "echo_test", "tags": [], "created_at": "2017-07-13 17:18:56", "scope":
-        "private", "input": "", "project_id": "<default-project>", "id": "4239eb15-9e28-45c1-9cd1-7fe3baaf073c"}]}'
+        "name": "echo_test", "tags": [], "created_at": "2017-12-13 21:13:43", "scope":
+        "private", "input": "", "project_id": "<default-project>", "id": "f0f83b4c-8047-4b1d-96c6-7d835dd5b960"}]}'
     http_version: 
-  recorded_at: Thu, 13 Jul 2017 17:19:36 GMT
+  recorded_at: Wed, 13 Dec 2017 21:13:43 GMT
 - request:
     method: post
     uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/executions
     body:
       encoding: UTF-8
-      string: '{"workflow_id":"4239eb15-9e28-45c1-9cd1-7fe3baaf073c"}'
+      string: '{"workflow_id":"f0f83b4c-8047-4b1d-96c6-7d835dd5b960"}'
     headers:
       Content-Type:
       - application/json
@@ -54,18 +54,18 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 13 Jul 2017 17:18:56 GMT
+      - Wed, 13 Dec 2017 21:13:44 GMT
     body:
       encoding: UTF-8
-      string: '{"state_info": null, "created_at": "2017-07-13 17:18:56", "description":
+      string: '{"state_info": null, "created_at": "2017-12-13 21:13:43", "description":
         "", "state": "RUNNING", "workflow_name": "echo_test", "task_execution_id":
-        null, "updated_at": "2017-07-13 17:18:56", "workflow_id": "4239eb15-9e28-45c1-9cd1-7fe3baaf073c",
-        "params": "{}", "output": "{}", "input": "{}", "id": "4e82904a-c7e7-4790-acd5-3decc20aced7"}'
+        null, "updated_at": "2017-12-13 21:13:43", "workflow_id": "f0f83b4c-8047-4b1d-96c6-7d835dd5b960",
+        "params": "{}", "output": "{}", "input": "{}", "id": "1814baa5-aaf9-4137-b577-5f644ad2b7ce"}'
     http_version: 
-  recorded_at: Thu, 13 Jul 2017 17:19:36 GMT
+  recorded_at: Wed, 13 Dec 2017 21:13:44 GMT
 - request:
     method: get
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/tasks?workflow_execution_id=4e82904a-c7e7-4790-acd5-3decc20aced7
+    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/tasks?workflow_execution_id=1814baa5-aaf9-4137-b577-5f644ad2b7ce
     body:
       encoding: US-ASCII
       string: ''
@@ -86,19 +86,19 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 13 Jul 2017 17:18:56 GMT
+      - Wed, 13 Dec 2017 21:13:44 GMT
     body:
       encoding: UTF-8
-      string: '{"tasks": [{"state_info": null, "created_at": "2017-07-13 17:18:56",
+      string: '{"tasks": [{"state_info": null, "created_at": "2017-12-13 21:13:43",
         "name": "echo", "workflow_name": "echo_test", "state": "RUNNING", "updated_at":
-        null, "workflow_execution_id": "4e82904a-c7e7-4790-acd5-3decc20aced7", "workflow_id":
-        "4239eb15-9e28-45c1-9cd1-7fe3baaf073c", "processed": false, "published": "{}",
-        "type": "ACTION", "id": "56095dfc-a844-4b4d-8856-104e76dff973"}]}'
+        null, "workflow_execution_id": "1814baa5-aaf9-4137-b577-5f644ad2b7ce", "workflow_id":
+        "f0f83b4c-8047-4b1d-96c6-7d835dd5b960", "processed": false, "published": "{}",
+        "type": "ACTION", "id": "72a7a99b-45a7-4f46-af9e-df8041f9658e"}]}'
     http_version: 
-  recorded_at: Thu, 13 Jul 2017 17:19:36 GMT
+  recorded_at: Wed, 13 Dec 2017 21:13:44 GMT
 - request:
     method: delete
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows/4239eb15-9e28-45c1-9cd1-7fe3baaf073c
+    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows/f0f83b4c-8047-4b1d-96c6-7d835dd5b960
     body:
       encoding: US-ASCII
       string: ''
@@ -115,10 +115,10 @@ http_interactions:
       message: No Content
     headers:
       Date:
-      - Thu, 13 Jul 2017 17:18:57 GMT
+      - Wed, 13 Dec 2017 21:13:45 GMT
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 13 Jul 2017 17:19:37 GMT
+  recorded_at: Wed, 13 Dec 2017 21:13:45 GMT
 recorded_with: VCR 3.0.3

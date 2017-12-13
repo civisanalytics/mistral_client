@@ -26,21 +26,21 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 13 Jul 2017 17:18:58 GMT
+      - Wed, 13 Dec 2017 21:13:46 GMT
     body:
       encoding: UTF-8
       string: '{"workflows": [{"definition": "---\n  version: \"2.0\"\n  echo_test:\n    type:
         direct\n    tasks:\n      echo:\n        action: std.echo output=\"ok\"\n",
-        "name": "echo_test", "tags": [], "created_at": "2017-07-13 17:18:58", "scope":
-        "private", "input": "", "project_id": "<default-project>", "id": "5c1bc71c-c22b-4888-81a5-24b4c2acaaf9"}]}'
+        "name": "echo_test", "tags": [], "created_at": "2017-12-13 21:13:46", "scope":
+        "private", "input": "", "project_id": "<default-project>", "id": "fe12f768-c22a-4aff-9a5a-97467196d2a9"}]}'
     http_version: 
-  recorded_at: Thu, 13 Jul 2017 17:19:38 GMT
+  recorded_at: Wed, 13 Dec 2017 21:13:46 GMT
 - request:
     method: post
     uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/executions
     body:
       encoding: UTF-8
-      string: '{"workflow_id":"5c1bc71c-c22b-4888-81a5-24b4c2acaaf9"}'
+      string: '{"workflow_id":"fe12f768-c22a-4aff-9a5a-97467196d2a9"}'
     headers:
       Content-Type:
       - application/json
@@ -54,18 +54,18 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 13 Jul 2017 17:18:58 GMT
+      - Wed, 13 Dec 2017 21:13:46 GMT
     body:
       encoding: UTF-8
-      string: '{"state_info": null, "created_at": "2017-07-13 17:18:58", "description":
+      string: '{"state_info": null, "created_at": "2017-12-13 21:13:46", "description":
         "", "state": "RUNNING", "workflow_name": "echo_test", "task_execution_id":
-        null, "updated_at": "2017-07-13 17:18:58", "workflow_id": "5c1bc71c-c22b-4888-81a5-24b4c2acaaf9",
-        "params": "{}", "output": "{}", "input": "{}", "id": "3e17e113-e761-49d3-aea3-a2e2779c45aa"}'
+        null, "updated_at": "2017-12-13 21:13:46", "workflow_id": "fe12f768-c22a-4aff-9a5a-97467196d2a9",
+        "params": "{}", "output": "{}", "input": "{}", "id": "46ddde9f-91a6-42bb-9d1c-0ebcbd0339a0"}'
     http_version: 
-  recorded_at: Thu, 13 Jul 2017 17:19:38 GMT
+  recorded_at: Wed, 13 Dec 2017 21:13:46 GMT
 - request:
     method: get
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/tasks?workflow_execution_id=3e17e113-e761-49d3-aea3-a2e2779c45aa
+    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/tasks?workflow_execution_id=46ddde9f-91a6-42bb-9d1c-0ebcbd0339a0
     body:
       encoding: US-ASCII
       string: ''
@@ -86,16 +86,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 13 Jul 2017 17:18:58 GMT
+      - Wed, 13 Dec 2017 21:13:46 GMT
     body:
       encoding: UTF-8
-      string: '{"tasks": [{"state_info": null, "created_at": "2017-07-13 17:18:58",
+      string: '{"tasks": [{"state_info": null, "created_at": "2017-12-13 21:13:46",
         "name": "echo", "workflow_name": "echo_test", "state": "RUNNING", "updated_at":
-        null, "workflow_execution_id": "3e17e113-e761-49d3-aea3-a2e2779c45aa", "workflow_id":
-        "5c1bc71c-c22b-4888-81a5-24b4c2acaaf9", "processed": false, "published": "{}",
-        "type": "ACTION", "id": "f1c50542-e055-4b96-a852-83b985eff9c5"}]}'
+        null, "workflow_execution_id": "46ddde9f-91a6-42bb-9d1c-0ebcbd0339a0", "workflow_id":
+        "fe12f768-c22a-4aff-9a5a-97467196d2a9", "processed": false, "published": "{}",
+        "type": "ACTION", "id": "b4eb5f90-7de0-46fc-b725-ad071ca8757e"}]}'
     http_version: 
-  recorded_at: Thu, 13 Jul 2017 17:19:38 GMT
+  recorded_at: Wed, 13 Dec 2017 21:13:46 GMT
 - request:
     method: get
     uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/tasks
@@ -115,77 +115,182 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '4607'
+      - '13004'
       Content-Type:
       - application/json
       Date:
-      - Thu, 13 Jul 2017 17:18:58 GMT
+      - Wed, 13 Dec 2017 21:13:46 GMT
     body:
       encoding: UTF-8
-      string: '{"tasks": [{"state_info": null, "created_at": "2017-07-13 15:26:29",
-        "name": "echo_one", "workflow_name": "something", "state": "SUCCESS", "updated_at":
-        "2017-07-13 15:26:29", "workflow_execution_id": "8dc0d194-452b-450e-8c9a-53d6fe38d60c",
-        "workflow_id": "7a514c2f-a635-4f21-926c-80dcbcf34f8b", "processed": true,
-        "published": "{}", "type": "ACTION", "id": "16a8f667-103c-46be-8c94-9dbf93a88cd8"},
-        {"state_info": null, "created_at": "2017-07-13 17:18:23", "name": "echo",
-        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-07-13
-        17:18:23", "workflow_execution_id": "1cf45ac8-d82b-4522-b11a-e5de689997e3",
-        "workflow_id": "55cf68b3-5c69-4af7-a74e-8eb110a121a2", "processed": true,
-        "published": "{}", "type": "ACTION", "id": "d8a444f2-1330-4cb7-be90-41afdeda353a"},
-        {"state_info": null, "created_at": "2017-07-13 17:18:36", "name": "echo",
-        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-07-13
-        17:18:36", "workflow_execution_id": "ac943308-b6db-4707-ba38-321a1b89b5cc",
-        "workflow_id": "5b7fbaa0-bf72-433d-8b8c-72aff460f352", "processed": true,
-        "published": "{}", "type": "ACTION", "id": "db006de8-bd06-4af4-b418-b6e852d54eb3"},
-        {"state_info": null, "created_at": "2017-07-13 17:18:39", "name": "echo",
-        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-07-13
-        17:18:39", "workflow_execution_id": "d3157941-d76f-4e0b-b156-6cdb1c92ebc0",
-        "workflow_id": "d826b208-d95f-480f-b214-afb4474dee4f", "processed": true,
-        "published": "{}", "type": "ACTION", "id": "d3b5b7b8-a2e0-4267-ace1-d6a37d5ba271"},
-        {"state_info": null, "created_at": "2017-07-13 17:18:41", "name": "echo",
-        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-07-13
-        17:18:41", "workflow_execution_id": "07f7cffe-bfac-4681-aab6-f15ac80838d1",
-        "workflow_id": "ebbfb446-9876-4918-bce8-f17c373ce068", "processed": true,
-        "published": "{}", "type": "ACTION", "id": "c4d3409b-d088-47d8-9d34-4f62dd10754d"},
-        {"state_info": null, "created_at": "2017-07-13 17:18:49", "name": "echo",
-        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-07-13
-        17:18:49", "workflow_execution_id": "9fbeea17-fd7c-4535-b7af-4fb3051f00e0",
-        "workflow_id": "a0e9b60b-34af-4af4-95b8-0502ae696fe2", "processed": true,
-        "published": "{}", "type": "ACTION", "id": "8a807dc1-d8a6-4032-abab-b65ea18e2b36"},
-        {"state_info": null, "created_at": "2017-07-13 17:18:50", "name": "echo",
-        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-07-13
-        17:18:50", "workflow_execution_id": "e38e9ba8-6c62-46eb-91ad-8deb893a7c89",
-        "workflow_id": "dff68e58-53d3-4f63-b990-0e6333841c8a", "processed": true,
-        "published": "{}", "type": "ACTION", "id": "43e8efcd-6b4a-4666-bd4c-0243d6ec877e"},
-        {"state_info": null, "created_at": "2017-07-13 17:18:51", "name": "echo",
-        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-07-13
-        17:18:51", "workflow_execution_id": "a902798a-426e-4276-8123-a142557632fa",
-        "workflow_id": "3a190f39-2a6d-4bd5-9034-c46826b7fa1c", "processed": true,
-        "published": "{}", "type": "ACTION", "id": "9ac6e029-b150-45b4-a2fc-6fe6650f768f"},
-        {"state_info": null, "created_at": "2017-07-13 17:18:52", "name": "echo",
-        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-07-13
-        17:18:52", "workflow_execution_id": "4d63a69f-43da-4e88-88a6-3f04e43f7a1e",
-        "workflow_id": "2b722fba-82ed-472a-9f2d-2ddb26156789", "processed": true,
-        "published": "{}", "type": "ACTION", "id": "3142b3b1-e743-4d45-8b22-92f3f0120829"},
-        {"state_info": null, "created_at": "2017-07-13 17:18:56", "name": "echo",
-        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-07-13
-        17:18:56", "workflow_execution_id": "4e82904a-c7e7-4790-acd5-3decc20aced7",
-        "workflow_id": "4239eb15-9e28-45c1-9cd1-7fe3baaf073c", "processed": true,
-        "published": "{}", "type": "ACTION", "id": "56095dfc-a844-4b4d-8856-104e76dff973"},
-        {"state_info": null, "created_at": "2017-07-13 17:18:57", "name": "echo",
-        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-07-13
-        17:18:57", "workflow_execution_id": "ccdf7656-deff-4fa6-a068-a5cc685ecbe5",
-        "workflow_id": "c270f1e6-ba07-48f4-96e9-4a815a82aee3", "processed": true,
-        "published": "{}", "type": "ACTION", "id": "6c5da716-5534-42e7-abb9-89994d89ed1b"},
-        {"state_info": null, "created_at": "2017-07-13 17:18:58", "name": "echo",
+      string: '{"tasks": [{"state_info": null, "created_at": "2017-12-13 21:12:19",
+        "name": "echo", "workflow_name": "echo_test", "state": "SUCCESS", "updated_at":
+        "2017-12-13 21:12:20", "workflow_execution_id": "2264e8d5-51b9-4f71-a332-acab4512a063",
+        "workflow_id": "dfab9090-e7bd-40f3-8f6e-d41aada31eb3", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "cb15259c-37e4-4738-b6c6-328010898409"},
+        {"state_info": null, "created_at": "2017-12-13 21:12:22", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:12:22", "workflow_execution_id": "30cf3672-18ea-4521-9fe1-72360d6baa3a",
+        "workflow_id": "06cfe217-3c55-434d-ad9d-5666940555c5", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "f0c2b73a-553c-433c-ae6b-13a9e9cfc2a3"},
+        {"state_info": null, "created_at": "2017-12-13 21:12:23", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:12:23", "workflow_execution_id": "eb3a6074-9609-4327-b221-98fdb78b4c49",
+        "workflow_id": "14006474-7875-476d-bbc8-e511b54f7ddc", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "d4b40633-6294-49aa-bc93-50f62a5474a9"},
+        {"state_info": null, "created_at": "2017-12-13 21:12:24", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:12:24", "workflow_execution_id": "f1bdd460-27b2-4c70-bcf7-2febce5103a7",
+        "workflow_id": "b562325f-ac53-4a2e-b95d-3cdef1ecc582", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "85b5ad4b-c4c1-495b-91e8-4e4630f2904b"},
+        {"state_info": null, "created_at": "2017-12-13 21:12:28", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:12:28", "workflow_execution_id": "2b38cbbd-b83f-485b-be64-8decbfa06d07",
+        "workflow_id": "1329dade-e796-4384-9a5d-6bdbb83903b9", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "028755e4-0838-46fc-a334-65487ed55506"},
+        {"state_info": null, "created_at": "2017-12-13 21:12:29", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:12:29", "workflow_execution_id": "aceeae2b-8617-46ea-931f-fd289ac07993",
+        "workflow_id": "b9e9f8bf-915c-4efc-957c-4b795d775733", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "a15f1799-ac51-4920-b750-68bd4bffbc05"},
+        {"state_info": null, "created_at": "2017-12-13 21:12:30", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:12:30", "workflow_execution_id": "c3169e73-5c1d-42f0-a7e3-73f90e102767",
+        "workflow_id": "041bf844-0b08-48cf-96ea-16e39986a8bc", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "3571e4bf-a282-4b02-a291-3b8f98c04aac"},
+        {"state_info": null, "created_at": "2017-12-13 21:12:31", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:12:31", "workflow_execution_id": "e768c566-41e3-48ff-8004-771aa847f6db",
+        "workflow_id": "9d28de86-e152-4ef3-ae0d-f212cb45c495", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "13e0359e-c1f9-4001-a2f0-5ba8bff0632e"},
+        {"state_info": null, "created_at": "2017-12-13 21:12:32", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:12:32", "workflow_execution_id": "78b461cd-d8cc-4b8d-a116-301e8837b102",
+        "workflow_id": "8d215671-a57c-48d0-9930-e9858113bf89", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "ee1eca2d-6f0c-4167-aa29-a0aa58869f67"},
+        {"state_info": "Failed to run action [action_ex_id=7ac08af5-efa9-4bdb-8fc2-f7a621083e0d,
+        action_cls=''<class ''mistral.actions.action_factory.FailAction''>'', attributes=''{}'',
+        params=''{}'']\n Fail action expected exception.", "created_at": "2017-12-13
+        21:12:36", "name": "echo", "workflow_name": "echo_test", "state": "ERROR",
+        "updated_at": "2017-12-13 21:12:36", "workflow_execution_id": "bd843ab9-04a7-4d8d-92d3-2adcb0208c72",
+        "workflow_id": "a01968ac-9559-4e5e-9ea5-02903fc3b32d", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "563a3430-879a-4bee-99a2-f66025a077e0"},
+        {"state_info": "Failed to run action [action_ex_id=89d60879-2386-4310-8eb1-eb8d0ff54bd9,
+        action_cls=''<class ''mistral.actions.action_factory.FailAction''>'', attributes=''{}'',
+        params=''{}'']\n Fail action expected exception.", "created_at": "2017-12-13
+        21:12:39", "name": "echo", "workflow_name": "echo_test", "state": "ERROR",
+        "updated_at": "2017-12-13 21:12:39", "workflow_execution_id": "f11fc53f-c19a-4158-a6aa-6a33305d3781",
+        "workflow_id": "39492cb5-f054-4675-a33f-fe0d654c7b12", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "a760d58e-b6c8-4ab7-8452-8acd0506daae"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:12", "name": "async",
         "workflow_name": "echo_test", "state": "RUNNING", "updated_at": null, "workflow_execution_id":
-        "3e17e113-e761-49d3-aea3-a2e2779c45aa", "workflow_id": "5c1bc71c-c22b-4888-81a5-24b4c2acaaf9",
-        "processed": false, "published": "{}", "type": "ACTION", "id": "f1c50542-e055-4b96-a852-83b985eff9c5"}]}'
+        "9f1a0b17-b234-48fc-bc25-cf008bb51b33", "workflow_id": "8cf4c353-cbd6-4223-8702-932de2d05b23",
+        "processed": false, "published": "{}", "type": "ACTION", "id": "08d3fe34-bb79-4edb-88b3-f7b711a33d32"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:12", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:13:12", "workflow_execution_id": "9f1a0b17-b234-48fc-bc25-cf008bb51b33",
+        "workflow_id": "8cf4c353-cbd6-4223-8702-932de2d05b23", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "5fc973b5-9ea9-4cdd-9d0d-1bedc11b96cb"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:14", "name": "async",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:13:15", "workflow_execution_id": "5649e853-c990-4150-9556-c609449a63a7",
+        "workflow_id": "0b4d801d-a29b-4529-8a7c-d73e04bbe475", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "060aa736-230d-411a-b3dc-46e6563c43cf"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:14", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:13:14", "workflow_execution_id": "5649e853-c990-4150-9556-c609449a63a7",
+        "workflow_id": "0b4d801d-a29b-4529-8a7c-d73e04bbe475", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "08c58c05-5323-4ca1-a5db-378910901d5b"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:16", "name": "async",
+        "workflow_name": "echo_test", "state": "RUNNING", "updated_at": null, "workflow_execution_id":
+        "0632d3fc-9676-43f9-97be-d21e1d250617", "workflow_id": "ec28a809-8571-4379-b4a6-f9bb9da0a95f",
+        "processed": false, "published": "{}", "type": "ACTION", "id": "2feddf6d-ab38-4e1f-baca-0a6ce4bfb836"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:16", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:13:16", "workflow_execution_id": "0632d3fc-9676-43f9-97be-d21e1d250617",
+        "workflow_id": "ec28a809-8571-4379-b4a6-f9bb9da0a95f", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "d8f2602d-ff25-4c44-b165-2d046e413aa8"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:19", "name": "async",
+        "workflow_name": "echo_test", "state": "RUNNING", "updated_at": null, "workflow_execution_id":
+        "d9b43edf-d9d7-4843-93e8-9db97483258b", "workflow_id": "b130bd2b-613e-438e-956a-7a15262d0ae2",
+        "processed": false, "published": "{}", "type": "ACTION", "id": "5ec6d10b-e48a-4c81-9d29-6a28f033ff20"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:19", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:13:19", "workflow_execution_id": "d9b43edf-d9d7-4843-93e8-9db97483258b",
+        "workflow_id": "b130bd2b-613e-438e-956a-7a15262d0ae2", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "799076b8-622e-4269-a230-49e40fc1a2e4"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:21", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:13:21", "workflow_execution_id": "5f963e84-9588-4427-9839-805d3b3142dd",
+        "workflow_id": "7e3c2a54-f9a8-45d8-978a-9c259548aae2", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "2a2415ac-e37c-4d58-ba06-5215df206580"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:21", "name": "async",
+        "workflow_name": "echo_test", "state": "RUNNING", "updated_at": null, "workflow_execution_id":
+        "5f963e84-9588-4427-9839-805d3b3142dd", "workflow_id": "7e3c2a54-f9a8-45d8-978a-9c259548aae2",
+        "processed": false, "published": "{}", "type": "ACTION", "id": "c5899f3e-26b6-4a7a-bc30-c835d6d2112f"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:28", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:13:28", "workflow_execution_id": "1d48884a-17a3-4ec8-8570-e94546af14dd",
+        "workflow_id": "2fe190ea-9b37-46b3-903e-04f7fb969248", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "fcc246b4-5c1c-46d1-a663-a34da6d25ff6"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:30", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:13:30", "workflow_execution_id": "a6b8a886-cd56-49fa-8360-bfc131e673b8",
+        "workflow_id": "421a8347-0631-4321-8dff-d11a096dce5e", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "9072dd62-274d-43bc-a6d7-3009146c2e6f"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:31", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:13:31", "workflow_execution_id": "a2eb93d6-7596-4b4d-81dc-ac8d06525568",
+        "workflow_id": "36421955-7dde-47ca-b58a-ebf6f1727645", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "9d2fee69-0e28-4057-9284-630175a91b0d"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:33", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:13:33", "workflow_execution_id": "bbe49bc8-49f9-4346-9d80-f98ee74697cf",
+        "workflow_id": "08eb8971-7e9c-4192-8113-0197c03f5da5", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "ad21355e-c903-41b7-acea-bc3252194700"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:35", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:13:35", "workflow_execution_id": "53c65076-7213-44fe-852d-e137cd855599",
+        "workflow_id": "9400d853-1c9a-44ed-a3a8-018e97d101a0", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "bb2db74a-785b-43a0-aaa6-dbd68ac1a82c"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:37", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:13:37", "workflow_execution_id": "39bf353e-a11c-4df9-be63-8616a77dc176",
+        "workflow_id": "0d78c478-0fb2-4db9-8a1d-a56f990118b9", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "b5a98313-cf5f-40cc-a52e-f30102a9593b"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:38", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:13:38", "workflow_execution_id": "2448f9ab-9045-48c6-92ad-9f0a617f61ba",
+        "workflow_id": "774bb258-7e8b-441d-9a98-8f0354edb1d1", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "f521209d-35a0-4b42-9b71-e20a16e17e3f"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:41", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:13:41", "workflow_execution_id": "d06afb1b-cb46-46cd-92f2-15afc9a02016",
+        "workflow_id": "d3df103d-4593-4615-8038-a727922242d8", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "e1257bab-5224-4ed0-b168-3d34c55b8915"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:42", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:13:42", "workflow_execution_id": "010b957b-fe02-41b5-9e11-55470d868d36",
+        "workflow_id": "a7f97e17-9365-4b6e-8cf3-e9792a306597", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "d15c9db0-7ffc-48d0-8dab-c57276c6a0f5"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:43", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:13:44", "workflow_execution_id": "1814baa5-aaf9-4137-b577-5f644ad2b7ce",
+        "workflow_id": "f0f83b4c-8047-4b1d-96c6-7d835dd5b960", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "72a7a99b-45a7-4f46-af9e-df8041f9658e"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:45", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-12-13
+        21:13:45", "workflow_execution_id": "9ff1a25a-3b49-47dd-8561-0bffe94d2583",
+        "workflow_id": "b4b3d7e6-2d3d-46af-8766-64b73cc2c2fd", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "494422cf-52f9-47df-8952-e2ba1f6ed47d"},
+        {"state_info": null, "created_at": "2017-12-13 21:13:46", "name": "echo",
+        "workflow_name": "echo_test", "state": "RUNNING", "updated_at": null, "workflow_execution_id":
+        "46ddde9f-91a6-42bb-9d1c-0ebcbd0339a0", "workflow_id": "fe12f768-c22a-4aff-9a5a-97467196d2a9",
+        "processed": false, "published": "{}", "type": "ACTION", "id": "b4eb5f90-7de0-46fc-b725-ad071ca8757e"}]}'
     http_version: 
-  recorded_at: Thu, 13 Jul 2017 17:19:38 GMT
+  recorded_at: Wed, 13 Dec 2017 21:13:46 GMT
 - request:
     method: delete
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows/5c1bc71c-c22b-4888-81a5-24b4c2acaaf9
+    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows/fe12f768-c22a-4aff-9a5a-97467196d2a9
     body:
       encoding: US-ASCII
       string: ''
@@ -202,10 +307,10 @@ http_interactions:
       message: No Content
     headers:
       Date:
-      - Thu, 13 Jul 2017 17:18:59 GMT
+      - Wed, 13 Dec 2017 21:13:47 GMT
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 13 Jul 2017 17:19:39 GMT
+  recorded_at: Wed, 13 Dec 2017 21:13:47 GMT
 recorded_with: VCR 3.0.3
