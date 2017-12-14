@@ -14,7 +14,6 @@ describe MistralClient::Execution, vcr: true do
         action: std.echo output="ok"
 '
   end
-
   let(:workflow) do
     @workflow_created = true
     client.workflow(definition)
@@ -36,12 +35,10 @@ describe MistralClient::Execution, vcr: true do
   end
 
   let(:input) { { 'key' => 'value' } }
-
   let(:workflow_with_input) do
     @workflow_with_input_created = true
     client.workflow(definition_with_input)
   end
-
   let(:env_def_with_input) do
     { 'name' => 'test_with_input', 'variables' => { 'foo' => 'bar' } }
   end

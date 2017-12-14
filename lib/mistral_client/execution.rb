@@ -58,7 +58,7 @@ module MistralClient
       params[:env] = @env if @env
       params[:task_name] = @task_name if @task_name
       body[:params] = params unless params.empty?
-      body[:input] = input unless params.nil?
+      body[:input] = input unless input.nil?
 
       resp = @server.post(PATH, body.to_json, json: true)
       ivars_from_response(resp)
