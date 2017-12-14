@@ -21,9 +21,32 @@ describe MistralClient::Execution, vcr: true do
 
   let(:env_def) { { 'name' => 'test', 'variables' => { 'foo' => 'bar' } } }
 
+  let(:definition_with_input) do
+    '---
+  version: "2.0"
+  echo_test_with_input:
+    type: direct
+    input:
+      - key
+    tasks:
+      echo:
+        action: std.echo output="ok"
+    '
+  end
+
+  let(:input) { { 'key' => 'value' } }
+  let(:workflow_with_input) do
+    @workflow_with_input_created = true
+    client.workflow(definition_with_input)
+  end
+  let(:env_def_with_input) do
+    { 'name' => 'test_with_input', 'variables' => { 'foo' => 'bar' } }
+  end
+
   after(:each) do
     sleep 1 if VCR.current_cassette&.recording?
     workflow.delete! if @workflow_created
+    workflow_with_input.delete! if @workflow_with_input_created
   end
 
   describe '#initialize' do
@@ -62,6 +85,26 @@ describe MistralClient::Execution, vcr: true do
             env: env_def['name']
           )
           expect(ex.params['env']).to eq(env_def['variables'])
+        end
+      end
+
+      context 'with an environment and an input' do
+        let!(:env) do
+          MistralClient::Environment.new(client, env_def_with_input.to_yaml)
+        end
+
+        after(:each) do
+          env.delete!
+        end
+
+        it 'creates an execution using the environment and the input' do
+          ex = MistralClient::Execution.new(
+            client,
+            workflow_id: workflow_with_input.id,
+            env: env_def_with_input['name'],
+            input: input
+          )
+          expect(ex.input).to eq(input)
         end
       end
     end
