@@ -42,12 +42,13 @@ module MistralClient
 
     private
 
-    def set_attributes(server, workflow_id, env, task_name, id)
+    def set_attributes(server, workflow_id, env, task_name, id, user_params)
       @server = server
       @env = env
       @task_name = task_name
       @id = id
       @workflow_id = workflow_id
+      @user_params = user_params
     end
 
     def create_execution
