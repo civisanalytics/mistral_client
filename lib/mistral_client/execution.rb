@@ -18,9 +18,10 @@ module MistralClient
     include MistralClient::Mixins::Definable
     include MistralClient::Mixins::Deletable
 
+    # rubocop:disable Metrics/ParameterLists
     def initialize(server, workflow_id: nil, env: nil, task_name: nil,
-                   id: nil)
-      set_attributes(server, workflow_id, env, task_name, id)
+                   id: nil, input: nil)
+      set_attributes(server, workflow_id, env, task_name, id, input)
       if @id
         reload
       elsif @workflow_id
@@ -42,12 +43,13 @@ module MistralClient
 
     private
 
-    def set_attributes(server, workflow_id, env, task_name, id)
+    def set_attributes(server, workflow_id, env, task_name, id, input)
       @server = server
       @env = env
       @task_name = task_name
       @id = id
       @workflow_id = workflow_id
+      @input = input
     end
 
     def create_execution
@@ -56,6 +58,7 @@ module MistralClient
       params[:env] = @env if @env
       params[:task_name] = @task_name if @task_name
       body[:params] = params unless params.empty?
+      body[:input] = input unless params.nil?
 
       resp = @server.post(PATH, body.to_json, json: true)
       ivars_from_response(resp)
