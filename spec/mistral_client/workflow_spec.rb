@@ -45,7 +45,11 @@ describe MistralClient::Workflow, vcr: true do
       workflow.execute!
       expect(MistralClient::Execution)
         .to have_received(:new)
-        .with(client, workflow_id: workflow.id, env: nil, task_name: nil)
+        .with(client,
+              workflow_id: workflow.id,
+              env: nil,
+              task_name: nil,
+              input: nil)
     end
   end
 
@@ -68,7 +72,11 @@ describe MistralClient::Workflow, vcr: true do
         workflow.execute!(env: 'test')
         expect(MistralClient::Execution)
           .to have_received(:new)
-          .with(client, workflow_id: workflow.id, env: 'test', task_name: nil)
+          .with(client,
+                workflow_id: workflow.id,
+                env: 'test',
+                task_name: nil,
+                input: nil)
       end
     end
 
@@ -126,7 +134,8 @@ describe MistralClient::Workflow, vcr: true do
           .with(client,
                 workflow_id: workflow.id,
                 env: 'test',
-                task_name: 'echo')
+                task_name: 'echo',
+                input: nil)
       end
     end
   end

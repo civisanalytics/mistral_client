@@ -21,8 +21,12 @@ module MistralClient
       end
     end
 
-    def execute!(env: nil, task_name: nil)
-      Execution.new(@server, workflow_id: @id, env: env, task_name: task_name)
+    def execute!(env: nil, task_name: nil, input: nil)
+      Execution.new(@server,
+                    workflow_id: @id,
+                    env: env,
+                    task_name: task_name,
+                    input: input)
     end
 
     def valid?(definition)
