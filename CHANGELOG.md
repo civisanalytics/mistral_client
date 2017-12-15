@@ -5,6 +5,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+* Made the input parameter available to Workflow.execute! so that users can parameterize workflows.
+
 ## 1.0.0 - 2017-10-09
 
 * Initial Release
