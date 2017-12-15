@@ -5,6 +5,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+* Fixed transient spec failure in task_spec.rb
+
 ## 1.0.0 - 2017-10-09
 
 * Initial Release

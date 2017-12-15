@@ -64,6 +64,7 @@ describe MistralClient::Task, vcr: true do
     let(:failing_execution) { failing_workflow.execute! }
     let(:failing_task) do
       tasks = client.task.list(workflow_execution_id: failing_execution.id)
+      sleep 5 if VCR.current_cassette&.recording?
       tasks[0]
     end
 
