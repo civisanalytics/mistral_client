@@ -12,7 +12,3 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 * Initial Release
 
 [Unreleased]: https://github.com/civisanalytics/mistral_client/compare/v1.0.0...HEAD
-
-
-
-
