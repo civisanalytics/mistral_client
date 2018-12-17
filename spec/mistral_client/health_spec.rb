@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe MistralClient::Endpoints, vcr: true do
+describe MistralClient::Health, vcr: true do
   let(:client) do
     MistralClient.new(LOCAL_MISTRAL_URL, verify: false)
   end

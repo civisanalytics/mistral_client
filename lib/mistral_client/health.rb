@@ -1,5 +1,5 @@
 module MistralClient
-  class Endpoints < Base
+  class Health < Base
     PATH = ''.freeze
 
     def initialize(server)

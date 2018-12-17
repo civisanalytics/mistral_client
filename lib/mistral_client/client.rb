@@ -34,7 +34,7 @@ module MistralClient
         execution: MistralClient::Execution,
         task: MistralClient::Task,
         workflow: MistralClient::Workflow,
-        endpoints: MistralClient::Endpoints
+        endpoints: MistralClient::Health
       }
     end
 

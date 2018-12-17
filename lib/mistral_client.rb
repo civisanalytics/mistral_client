@@ -12,7 +12,7 @@ require 'mistral_client/execution'
 require 'mistral_client/task'
 require 'mistral_client/version'
 require 'mistral_client/workflow'
-require 'mistral_client/endpoints'
+require 'mistral_client/health'
 
 module MistralClient
   class << self
