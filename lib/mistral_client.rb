@@ -9,10 +9,10 @@ require 'mistral_client/client'
 require 'mistral_client/environment'
 require 'mistral_client/error'
 require 'mistral_client/execution'
+require 'mistral_client/health'
 require 'mistral_client/task'
 require 'mistral_client/version'
 require 'mistral_client/workflow'
-require 'mistral_client/health'
 
 module MistralClient
   class << self
