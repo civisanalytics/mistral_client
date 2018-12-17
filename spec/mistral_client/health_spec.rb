@@ -10,9 +10,8 @@ describe MistralClient::Health, vcr: true do
   end
 
   describe '.get' do
-    it 'retrieves available endpoints' do
-      endpoints = client.endpoints.get
-      expect(endpoints.count).to eq 1
+    it 'retrieves application root' do
+      expect { client.health.get }.not_to raise_error
     end
   end
 end
