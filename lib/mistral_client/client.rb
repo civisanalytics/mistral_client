@@ -32,6 +32,7 @@ module MistralClient
         action_execution: MistralClient::ActionExecution,
         environment: MistralClient::Environment,
         execution: MistralClient::Execution,
+        health: MistralClient::Health,
         task: MistralClient::Task,
         workflow: MistralClient::Workflow
       }

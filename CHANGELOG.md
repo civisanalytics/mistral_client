@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.2.0] - 2018-12-17
+
+### Added
+- A get health endpoint
+
 ## [1.1.0] - 2017-12-15
 
 ### Added
@@ -17,5 +22,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 * Initial Release
 
-[Unreleased]: https://github.com/civisanalytics/mistral_client/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/civisanalytics/mistral_client/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/civisanalytics/mistral_client/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/civisanalytics/mistral_client/compare/v1.0.0...v1.1.0
