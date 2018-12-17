@@ -33,7 +33,8 @@ module MistralClient
         environment: MistralClient::Environment,
         execution: MistralClient::Execution,
         task: MistralClient::Task,
-        workflow: MistralClient::Workflow
+        workflow: MistralClient::Workflow,
+        endpoints: MistralClient::Endpoints
       }
     end
 
