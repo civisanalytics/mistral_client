@@ -115,10 +115,10 @@ describe MistralClient::Client do
         client.send(:check_for_error, missing_object_response)
       end.to raise_error(MistralClient::MissingObjectError, 'Invalid object')
     end
-    it 'raises MistralError on non-404 error' do
+    it 'raises MistralResponseError on non-404 error' do
       expect do
         client.send(:check_for_error, error_response)
-      end.to raise_error(MistralClient::MistralError, /problem found/)
+      end.to raise_error(MistralClient::MistralResponseError, /problem found/)
     end
   end
 end
