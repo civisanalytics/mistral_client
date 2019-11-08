@@ -70,7 +70,7 @@ module MistralClient
       if resp.code == 404
         raise MissingObjectError, JSON.parse(resp.body)['faultstring']
       end
-      raise MistralError,
+      raise MistralResponseError.new(resp),
             "Could not perform the requested operation:\n#{resp.body}"
     end
   end
