@@ -25,6 +25,7 @@ module MistralClient
     def delete!
       resp = @server.delete("#{PATH}/#{@name}")
       return true if resp.code == 204
+
       raise MistralClient::MistralError,
             "Could not perform the requested operation:\n#{resp.body}"
     end

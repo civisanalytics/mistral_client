@@ -6,6 +6,7 @@ module MistralClient
 
         %w[UNICODE_FIELDS DATE_FIELDS JSON_FIELDS BOOL_FIELDS].each do |fields|
           next unless child.const_defined? fields
+
           child.send(:attr_reader, *child.const_get(fields))
         end
       end
