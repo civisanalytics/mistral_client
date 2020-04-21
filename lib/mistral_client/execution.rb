@@ -28,6 +28,7 @@ module MistralClient
         create_execution
       end
     end
+    # rubocop:enable Metrics/ParameterLists
 
     def patch(description: nil, state: nil, env: nil)
       body = {}
@@ -43,6 +44,7 @@ module MistralClient
 
     private
 
+    # rubocop:disable Metrics/ParameterLists
     def set_attributes(server, workflow_id, env, task_name, id, input)
       @server = server
       @env = env
@@ -51,6 +53,7 @@ module MistralClient
       @workflow_id = workflow_id
       @input = input
     end
+    # rubocop:enable Metrics/ParameterLists
 
     def create_execution
       body = { workflow_id: @workflow_id }

@@ -6,6 +6,7 @@ module MistralClient
         if definition.is_a?(Hash) || definition.is_a?(Array)
           return YAML.dump(definition)
         end
+
         definition = File.read(definition) if File.exist?(definition)
         # Called outside the if/else to validate the YAML.
         parsed = YAML.safe_load(definition, [], [], true)

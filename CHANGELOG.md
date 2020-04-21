@@ -5,6 +5,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.3.0] - 2020-04-20
+
+### Changed
+- Relaxed the constraint on the httparty dependency
+- Added Ruby 2.5 and 2.6 to the build matrix
+- Updated development dependencies
+
 ## [1.2.1] - 2019-11-07
 
 ### Added

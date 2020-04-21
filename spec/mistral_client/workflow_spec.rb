@@ -11,12 +11,12 @@ describe MistralClient::Workflow, vcr: true do
 
   after(:each) do
     sleep 1 if VCR.current_cassette&.recording?
-    # rubocop:disable Lint/HandleExceptions
+    # rubocop:disable Lint/SuppressedException
     begin
       workflow.delete! if @workflow_created
     rescue MistralClient::MistralError
     end
-    # rubocop:enable Lint/HandleExceptions
+    # rubocop:enable Lint/SuppressedException
   end
 
   before(:each) { allow(MistralClient::Execution).to receive(:new) }

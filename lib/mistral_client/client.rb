@@ -54,6 +54,7 @@ module MistralClient
 
     def post_or_put(verb, path, body, json)
       raise ArgumentError unless %i[post put].include?(verb)
+
       headers = if json
                   { 'Content-Type' => 'application/json' }
                 else
@@ -70,6 +71,7 @@ module MistralClient
       if resp.code == 404
         raise MissingObjectError, JSON.parse(resp.body)['faultstring']
       end
+
       raise MistralResponseError.new(resp),
             "Could not perform the requested operation:\n#{resp.body}"
     end
