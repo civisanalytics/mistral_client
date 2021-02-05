@@ -9,6 +9,11 @@ describe MistralClient::Workflow, vcr: true do
     client.workflow(definition)
   end
 
+  before(:each) do
+    @workflow_created = false
+    allow(MistralClient::Execution).to receive(:new)
+  end
+
   after(:each) do
     sleep 1 if VCR.current_cassette&.recording?
     # rubocop:disable Lint/SuppressedException
@@ -18,8 +23,6 @@ describe MistralClient::Workflow, vcr: true do
     end
     # rubocop:enable Lint/SuppressedException
   end
-
-  before(:each) { allow(MistralClient::Execution).to receive(:new) }
 
   RSpec.shared_examples 'the workflow is valid' do
     describe '#valid?' do

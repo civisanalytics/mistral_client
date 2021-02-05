@@ -9,7 +9,7 @@ module MistralClient
 
     def initialize(server, definition = nil, name: nil)
       @server = server
-      @definition = parse_definition(definition) if definition
+      @definition = definition ? parse_definition(definition) : nil
       @name = name
       if @name
         reload
