@@ -38,9 +38,13 @@ module MistralClient
       }
     end
 
-    def method_missing(name, *args, &block)
+    def method_missing(name, *args, **kwargs, &block)
       if self.class.resources.keys.include?(name)
-        self.class.resources[name].new(self, *args)
+        if kwargs.nil? || kwargs.empty?
+          self.class.resources[name].new(self, *args)
+        else
+          self.class.resources[name].new(self, *args, **kwargs)
+        end
       else
         super
       end
