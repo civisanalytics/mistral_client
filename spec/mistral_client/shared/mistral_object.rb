@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 shared_examples 'mistral_object' do
   let(:optional_bool_fields) { [] }
   let(:optional_date_fields) { %w[updated_at] }

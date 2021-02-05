@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 shared_examples 'deletable' do
   let(:obj) { described_class.new(client, id: id) }
   describe '#delete!' do
