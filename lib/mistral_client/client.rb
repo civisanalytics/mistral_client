@@ -72,9 +72,7 @@ module MistralClient
 
     def check_for_error(resp)
       return if resp.code >= 200 && resp.code < 300
-      if resp.code == 404
-        raise MissingObjectError, JSON.parse(resp.body)['faultstring']
-      end
+      raise MissingObjectError, JSON.parse(resp.body)['faultstring'] if resp.code == 404
 
       raise MistralResponseError.new(resp),
             "Could not perform the requested operation:\n#{resp.body}"
