@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows
+    uri: http://localhost:8989/v2/workflows
     body:
       encoding: UTF-8
       string: "---\n      version: \"2.0\"\n      echo_test:\n        type: reverse\n
@@ -11,6 +11,12 @@ http_interactions:
     headers:
       Content-Type:
       - text/plain
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 201
@@ -21,24 +27,30 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 13 Sep 2017 14:42:48 GMT
+      - Sat, 06 Feb 2021 21:59:33 GMT
     body:
       encoding: UTF-8
       string: '{"workflows": [{"definition": "---\n      version: \"2.0\"\n      echo_test:\n        type:
         reverse\n        tasks:\n          echo:\n            action: std.echo output=\"ok\"\n    ",
-        "name": "echo_test", "tags": [], "created_at": "2017-09-13 14:42:48", "scope":
-        "private", "input": "", "project_id": "<default-project>", "id": "4c64ca43-4078-4f50-b5fe-b613f5862901"}]}'
-    http_version: 
-  recorded_at: Wed, 13 Sep 2017 14:42:47 GMT
+        "name": "echo_test", "tags": [], "created_at": "2021-02-06 21:59:33", "scope":
+        "private", "input": "", "project_id": "<default-project>", "id": "bf4ea913-d62f-4c67-b2dd-c381d4eeb4b5"}]}'
+    http_version:
+  recorded_at: Sat, 06 Feb 2021 21:59:33 GMT
 - request:
     method: post
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/executions
+    uri: http://localhost:8989/v2/executions
     body:
       encoding: UTF-8
-      string: '{"workflow_id":"4c64ca43-4078-4f50-b5fe-b613f5862901","params":{"task_name":"not_echo"}}'
+      string: '{"workflow_id":"bf4ea913-d62f-4c67-b2dd-c381d4eeb4b5","params":{"task_name":"not_echo"}}'
     headers:
       Content-Type:
       - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 400
@@ -49,7 +61,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 13 Sep 2017 14:42:48 GMT
+      - Sat, 06 Feb 2021 21:59:33 GMT
     body:
       encoding: UTF-8
       string: '{"debuginfo": null, "faultcode": "Client", "faultstring": "Invalid
@@ -57,11 +69,11 @@ http_interactions:
         u''std.echo output=\"ok\"'', u''version'': ''2.0'', u''type'': u''reverse'',
         u''name'': u''echo''}}, u''type'': u''reverse'', u''name'': u''echo_test'',
         u''version'': u''2.0''}, task_name=not_echo]"}'
-    http_version: 
-  recorded_at: Wed, 13 Sep 2017 14:42:47 GMT
+    http_version:
+  recorded_at: Sat, 06 Feb 2021 21:59:33 GMT
 - request:
     method: delete
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows/4c64ca43-4078-4f50-b5fe-b613f5862901
+    uri: http://localhost:8989/v2/workflows/bf4ea913-d62f-4c67-b2dd-c381d4eeb4b5
     body:
       encoding: US-ASCII
       string: ''
@@ -77,11 +89,13 @@ http_interactions:
       code: 204
       message: No Content
     headers:
+      Content-Length:
+      - '0'
       Date:
-      - Wed, 13 Sep 2017 14:42:49 GMT
+      - Sat, 06 Feb 2021 21:59:34 GMT
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
-  recorded_at: Wed, 13 Sep 2017 14:42:48 GMT
-recorded_with: VCR 3.0.3
+    http_version:
+  recorded_at: Sat, 06 Feb 2021 21:59:34 GMT
+recorded_with: VCR 5.1.0

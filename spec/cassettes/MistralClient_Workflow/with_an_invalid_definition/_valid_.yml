@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows/validate
+    uri: http://localhost:8989/v2/workflows/validate
     body:
       encoding: UTF-8
       string: |
@@ -13,6 +13,12 @@ http_interactions:
     headers:
       Content-Type:
       - text/plain
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
@@ -23,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 13 Jul 2017 17:19:12 GMT
+      - Sat, 06 Feb 2021 22:00:28 GMT
     body:
       encoding: UTF-8
       string: '{"valid": false, "error": "Invalid DSL: ''tasks'' is a required property\n\nFailed
@@ -385,6 +391,6 @@ http_interactions:
         ''string''}]}},\n                             ''type'': ''object''}},\n     ''required'':
         [''tasks'']}\n\nOn instance:\n    {''name'': ''echo_test'', ''type'': ''direct'',
         ''version'': ''2.0''}"}'
-    http_version: 
-  recorded_at: Thu, 13 Jul 2017 17:19:52 GMT
-recorded_with: VCR 3.0.3
+    http_version:
+  recorded_at: Sat, 06 Feb 2021 22:00:28 GMT
+recorded_with: VCR 5.1.0

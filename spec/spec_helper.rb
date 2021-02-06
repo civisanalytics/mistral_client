@@ -6,7 +6,7 @@ require 'pry'
 require 'vcr'
 
 LOCAL_MISTRAL_URL =
-  'http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2'.freeze
+  'http://localhost:8989/v2'.freeze
 
 RSpec.configure do |config|
   # Turn deprecation warnings into errors.
