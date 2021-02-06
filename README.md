@@ -2,13 +2,12 @@
 
 [![Build Status](https://travis-ci.org/civisanalytics/mistral_client.svg?branch=master)](https://travis-ci.org/civisanalytics/mistral_client)
 [![Gem Version](https://badge.fury.io/rb/mistral_client.svg)](http://badge.fury.io/rb/mistral_client)
-[![Dependency Status](https://gemnasium.com/civisanalytics/mistral_client.svg)](https://gemnasium.com/civisanalytics/mistral_client)
 
 MistralClient provides a Ruby interface to a limited subset of
 the [Mistral] [API].
 
-[Mistral]: https://wiki.openstack.org/wiki/Mistral
-[API]: https://docs.openstack.org/mistral/latest/api/v2.html
+[Mistral]: https://docs.openstack.org/mistral/latest/
+[API]: https://docs.openstack.org/mistral/latest/user/rest_api_v2.html
 
 ## Installation
 
