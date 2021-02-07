@@ -1,6 +1,6 @@
 # MistralClient
 
-[![Build Status](https://travis-ci.org/civisanalytics/mistral_client.svg?branch=master)](https://travis-ci.org/civisanalytics/mistral_client)
+[![Build Status](https://travis-ci.com/civisanalytics/mistral_client.svg?branch=master)](https://travis-ci.com/civisanalytics/mistral_client)
 [![Gem Version](https://badge.fury.io/rb/mistral_client.svg)](http://badge.fury.io/rb/mistral_client)
 
 MistralClient provides a Ruby interface to a limited subset of
