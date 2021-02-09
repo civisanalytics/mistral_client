@@ -10,11 +10,11 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'Ruby client for Mistral.'
   spec.description   = "A Ruby client for OpenStack's Mistral " \
-                       '<https://wiki.openstack.org/wiki/Mistral>.'
+                       '<https://docs.openstack.org/mistral/latest/>.'
   spec.homepage      = 'https://github.com/civisanalytics/mistral_client'
-  spec.license       = 'BSD 3-Clause'
+  spec.license       = 'BSD-3-Clause'
 
-  spec.required_ruby_version = '>= 2.5'
+  spec.required_ruby_version = ['>= 2.5', '< 3.1']
   spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
