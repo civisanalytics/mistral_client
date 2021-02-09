@@ -43,6 +43,11 @@ describe MistralClient::Execution, vcr: true do
     { 'name' => 'test_with_input', 'variables' => { 'foo' => 'bar' } }
   end
 
+  before(:each) do
+    @workflow_created = false
+    @workflow_with_input_created = false
+  end
+
   after(:each) do
     sleep 1 if VCR.current_cassette&.recording?
     workflow.delete! if @workflow_created

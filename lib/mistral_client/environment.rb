@@ -8,8 +8,9 @@ module MistralClient
     include MistralClient::Mixins::Definable
 
     def initialize(server, definition = nil, name: nil)
+      super()
       @server = server
-      @definition = parse_definition(definition) if definition
+      @definition = definition ? parse_definition(definition) : nil
       @name = name
       if @name
         reload
@@ -38,9 +39,7 @@ module MistralClient
     end
 
     def massage_definition(definition)
-      if definition['variables'].is_a? Hash
-        definition['variables'] = definition['variables'].to_json
-      end
+      definition['variables'] = definition['variables'].to_json if definition['variables'].is_a? Hash
       definition
     end
   end

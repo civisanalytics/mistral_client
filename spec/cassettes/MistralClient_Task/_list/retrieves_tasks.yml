@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows
+    uri: http://localhost:8989/v2/workflows
     body:
       encoding: UTF-8
       string: |
@@ -16,6 +16,12 @@ http_interactions:
     headers:
       Content-Type:
       - text/plain
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 201
@@ -26,24 +32,30 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 13 Jul 2017 17:18:56 GMT
+      - Sat, 06 Feb 2021 21:59:44 GMT
     body:
       encoding: UTF-8
       string: '{"workflows": [{"definition": "---\n  version: \"2.0\"\n  echo_test:\n    type:
         direct\n    tasks:\n      echo:\n        action: std.echo output=\"ok\"\n",
-        "name": "echo_test", "tags": [], "created_at": "2017-07-13 17:18:56", "scope":
-        "private", "input": "", "project_id": "<default-project>", "id": "4239eb15-9e28-45c1-9cd1-7fe3baaf073c"}]}'
-    http_version: 
-  recorded_at: Thu, 13 Jul 2017 17:19:36 GMT
+        "name": "echo_test", "tags": [], "created_at": "2021-02-06 21:59:44", "scope":
+        "private", "input": "", "project_id": "<default-project>", "id": "2cd0293e-d44a-426c-aab0-1d3b4e6aee9f"}]}'
+    http_version:
+  recorded_at: Sat, 06 Feb 2021 21:59:44 GMT
 - request:
     method: post
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/executions
+    uri: http://localhost:8989/v2/executions
     body:
       encoding: UTF-8
-      string: '{"workflow_id":"4239eb15-9e28-45c1-9cd1-7fe3baaf073c"}'
+      string: '{"workflow_id":"2cd0293e-d44a-426c-aab0-1d3b4e6aee9f"}'
     headers:
       Content-Type:
       - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 201
@@ -54,18 +66,18 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 13 Jul 2017 17:18:56 GMT
+      - Sat, 06 Feb 2021 21:59:44 GMT
     body:
       encoding: UTF-8
-      string: '{"state_info": null, "created_at": "2017-07-13 17:18:56", "description":
+      string: '{"state_info": null, "created_at": "2021-02-06 21:59:44", "description":
         "", "state": "RUNNING", "workflow_name": "echo_test", "task_execution_id":
-        null, "updated_at": "2017-07-13 17:18:56", "workflow_id": "4239eb15-9e28-45c1-9cd1-7fe3baaf073c",
-        "params": "{}", "output": "{}", "input": "{}", "id": "4e82904a-c7e7-4790-acd5-3decc20aced7"}'
-    http_version: 
-  recorded_at: Thu, 13 Jul 2017 17:19:36 GMT
+        null, "updated_at": "2021-02-06 21:59:44", "workflow_id": "2cd0293e-d44a-426c-aab0-1d3b4e6aee9f",
+        "params": "{}", "output": "{}", "input": "{}", "id": "c41cd8d4-c99a-4ef1-8fb9-de6e779dad28"}'
+    http_version:
+  recorded_at: Sat, 06 Feb 2021 21:59:44 GMT
 - request:
     method: get
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/tasks?workflow_execution_id=4e82904a-c7e7-4790-acd5-3decc20aced7
+    uri: http://localhost:8989/v2/tasks?workflow_execution_id=c41cd8d4-c99a-4ef1-8fb9-de6e779dad28
     body:
       encoding: US-ASCII
       string: ''
@@ -86,19 +98,19 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 13 Jul 2017 17:18:56 GMT
+      - Sat, 06 Feb 2021 21:59:44 GMT
     body:
       encoding: UTF-8
-      string: '{"tasks": [{"state_info": null, "created_at": "2017-07-13 17:18:56",
+      string: '{"tasks": [{"state_info": null, "created_at": "2021-02-06 21:59:44",
         "name": "echo", "workflow_name": "echo_test", "state": "RUNNING", "updated_at":
-        null, "workflow_execution_id": "4e82904a-c7e7-4790-acd5-3decc20aced7", "workflow_id":
-        "4239eb15-9e28-45c1-9cd1-7fe3baaf073c", "processed": false, "published": "{}",
-        "type": "ACTION", "id": "56095dfc-a844-4b4d-8856-104e76dff973"}]}'
-    http_version: 
-  recorded_at: Thu, 13 Jul 2017 17:19:36 GMT
+        null, "workflow_execution_id": "c41cd8d4-c99a-4ef1-8fb9-de6e779dad28", "workflow_id":
+        "2cd0293e-d44a-426c-aab0-1d3b4e6aee9f", "processed": false, "published": "{}",
+        "type": "ACTION", "id": "7e3230dd-5e8f-41d3-83f8-9b60f45429e2"}]}'
+    http_version:
+  recorded_at: Sat, 06 Feb 2021 21:59:44 GMT
 - request:
     method: delete
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows/4239eb15-9e28-45c1-9cd1-7fe3baaf073c
+    uri: http://localhost:8989/v2/workflows/2cd0293e-d44a-426c-aab0-1d3b4e6aee9f
     body:
       encoding: US-ASCII
       string: ''
@@ -114,11 +126,13 @@ http_interactions:
       code: 204
       message: No Content
     headers:
+      Content-Length:
+      - '0'
       Date:
-      - Thu, 13 Jul 2017 17:18:57 GMT
+      - Sat, 06 Feb 2021 21:59:45 GMT
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
-  recorded_at: Thu, 13 Jul 2017 17:19:37 GMT
-recorded_with: VCR 3.0.3
+    http_version:
+  recorded_at: Sat, 06 Feb 2021 21:59:45 GMT
+recorded_with: VCR 5.1.0

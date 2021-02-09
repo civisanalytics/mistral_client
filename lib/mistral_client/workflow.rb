@@ -11,6 +11,7 @@ module MistralClient
     include MistralClient::Mixins::Deletable
 
     def initialize(server, definition = nil, id: nil, name: nil)
+      super()
       @server = server
       if definition
         @definition = parse_definition(definition)

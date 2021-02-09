@@ -18,6 +18,7 @@ module MistralClient
     include MistralClient::Mixins::MistralObject
 
     def initialize(server, id: nil)
+      super()
       @server = server
       @path = 'action_executions'
       @id = id

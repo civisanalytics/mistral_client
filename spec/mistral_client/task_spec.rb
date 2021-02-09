@@ -20,6 +20,8 @@ describe MistralClient::Task, vcr: true do
   end
   let(:execution) { workflow.execute! }
 
+  before(:each) { @workflow_created = false }
+
   after(:each) do
     sleep 1 if VCR.current_cassette&.recording?
     workflow.delete! if @workflow_created

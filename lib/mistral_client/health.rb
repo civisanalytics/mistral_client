@@ -3,6 +3,7 @@ module MistralClient
     PATH = ''.freeze
 
     def initialize(server)
+      super()
       @server = server
     end
 

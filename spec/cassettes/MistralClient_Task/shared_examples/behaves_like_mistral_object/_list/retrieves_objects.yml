@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows
+    uri: http://localhost:8989/v2/workflows
     body:
       encoding: UTF-8
       string: |
@@ -16,6 +16,12 @@ http_interactions:
     headers:
       Content-Type:
       - text/plain
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 201
@@ -26,24 +32,30 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 13 Jul 2017 17:18:58 GMT
+      - Sat, 06 Feb 2021 21:59:46 GMT
     body:
       encoding: UTF-8
       string: '{"workflows": [{"definition": "---\n  version: \"2.0\"\n  echo_test:\n    type:
         direct\n    tasks:\n      echo:\n        action: std.echo output=\"ok\"\n",
-        "name": "echo_test", "tags": [], "created_at": "2017-07-13 17:18:58", "scope":
-        "private", "input": "", "project_id": "<default-project>", "id": "5c1bc71c-c22b-4888-81a5-24b4c2acaaf9"}]}'
-    http_version: 
-  recorded_at: Thu, 13 Jul 2017 17:19:38 GMT
+        "name": "echo_test", "tags": [], "created_at": "2021-02-06 21:59:46", "scope":
+        "private", "input": "", "project_id": "<default-project>", "id": "d3ebf355-28b9-4486-8622-a3afd66e8460"}]}'
+    http_version:
+  recorded_at: Sat, 06 Feb 2021 21:59:46 GMT
 - request:
     method: post
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/executions
+    uri: http://localhost:8989/v2/executions
     body:
       encoding: UTF-8
-      string: '{"workflow_id":"5c1bc71c-c22b-4888-81a5-24b4c2acaaf9"}'
+      string: '{"workflow_id":"d3ebf355-28b9-4486-8622-a3afd66e8460"}'
     headers:
       Content-Type:
       - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 201
@@ -54,18 +66,18 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 13 Jul 2017 17:18:58 GMT
+      - Sat, 06 Feb 2021 21:59:46 GMT
     body:
       encoding: UTF-8
-      string: '{"state_info": null, "created_at": "2017-07-13 17:18:58", "description":
+      string: '{"state_info": null, "created_at": "2021-02-06 21:59:46", "description":
         "", "state": "RUNNING", "workflow_name": "echo_test", "task_execution_id":
-        null, "updated_at": "2017-07-13 17:18:58", "workflow_id": "5c1bc71c-c22b-4888-81a5-24b4c2acaaf9",
-        "params": "{}", "output": "{}", "input": "{}", "id": "3e17e113-e761-49d3-aea3-a2e2779c45aa"}'
-    http_version: 
-  recorded_at: Thu, 13 Jul 2017 17:19:38 GMT
+        null, "updated_at": "2021-02-06 21:59:46", "workflow_id": "d3ebf355-28b9-4486-8622-a3afd66e8460",
+        "params": "{}", "output": "{}", "input": "{}", "id": "7897bab6-0cf9-4091-a4b6-1d6f9030f672"}'
+    http_version:
+  recorded_at: Sat, 06 Feb 2021 21:59:46 GMT
 - request:
     method: get
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/tasks?workflow_execution_id=3e17e113-e761-49d3-aea3-a2e2779c45aa
+    uri: http://localhost:8989/v2/tasks?workflow_execution_id=7897bab6-0cf9-4091-a4b6-1d6f9030f672
     body:
       encoding: US-ASCII
       string: ''
@@ -86,19 +98,19 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 13 Jul 2017 17:18:58 GMT
+      - Sat, 06 Feb 2021 21:59:46 GMT
     body:
       encoding: UTF-8
-      string: '{"tasks": [{"state_info": null, "created_at": "2017-07-13 17:18:58",
+      string: '{"tasks": [{"state_info": null, "created_at": "2021-02-06 21:59:46",
         "name": "echo", "workflow_name": "echo_test", "state": "RUNNING", "updated_at":
-        null, "workflow_execution_id": "3e17e113-e761-49d3-aea3-a2e2779c45aa", "workflow_id":
-        "5c1bc71c-c22b-4888-81a5-24b4c2acaaf9", "processed": false, "published": "{}",
-        "type": "ACTION", "id": "f1c50542-e055-4b96-a852-83b985eff9c5"}]}'
-    http_version: 
-  recorded_at: Thu, 13 Jul 2017 17:19:38 GMT
+        null, "workflow_execution_id": "7897bab6-0cf9-4091-a4b6-1d6f9030f672", "workflow_id":
+        "d3ebf355-28b9-4486-8622-a3afd66e8460", "processed": false, "published": "{}",
+        "type": "ACTION", "id": "3c9ec2a5-9a3e-4576-bf29-b354fb09fd85"}]}'
+    http_version:
+  recorded_at: Sat, 06 Feb 2021 21:59:46 GMT
 - request:
     method: get
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/tasks
+    uri: http://localhost:8989/v2/tasks
     body:
       encoding: US-ASCII
       string: ''
@@ -115,77 +127,128 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '4607'
+      - '8779'
       Content-Type:
       - application/json
       Date:
-      - Thu, 13 Jul 2017 17:18:58 GMT
+      - Sat, 06 Feb 2021 21:59:46 GMT
     body:
       encoding: UTF-8
-      string: '{"tasks": [{"state_info": null, "created_at": "2017-07-13 15:26:29",
-        "name": "echo_one", "workflow_name": "something", "state": "SUCCESS", "updated_at":
-        "2017-07-13 15:26:29", "workflow_execution_id": "8dc0d194-452b-450e-8c9a-53d6fe38d60c",
-        "workflow_id": "7a514c2f-a635-4f21-926c-80dcbcf34f8b", "processed": true,
-        "published": "{}", "type": "ACTION", "id": "16a8f667-103c-46be-8c94-9dbf93a88cd8"},
-        {"state_info": null, "created_at": "2017-07-13 17:18:23", "name": "echo",
-        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-07-13
-        17:18:23", "workflow_execution_id": "1cf45ac8-d82b-4522-b11a-e5de689997e3",
-        "workflow_id": "55cf68b3-5c69-4af7-a74e-8eb110a121a2", "processed": true,
-        "published": "{}", "type": "ACTION", "id": "d8a444f2-1330-4cb7-be90-41afdeda353a"},
-        {"state_info": null, "created_at": "2017-07-13 17:18:36", "name": "echo",
-        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-07-13
-        17:18:36", "workflow_execution_id": "ac943308-b6db-4707-ba38-321a1b89b5cc",
-        "workflow_id": "5b7fbaa0-bf72-433d-8b8c-72aff460f352", "processed": true,
-        "published": "{}", "type": "ACTION", "id": "db006de8-bd06-4af4-b418-b6e852d54eb3"},
-        {"state_info": null, "created_at": "2017-07-13 17:18:39", "name": "echo",
-        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-07-13
-        17:18:39", "workflow_execution_id": "d3157941-d76f-4e0b-b156-6cdb1c92ebc0",
-        "workflow_id": "d826b208-d95f-480f-b214-afb4474dee4f", "processed": true,
-        "published": "{}", "type": "ACTION", "id": "d3b5b7b8-a2e0-4267-ace1-d6a37d5ba271"},
-        {"state_info": null, "created_at": "2017-07-13 17:18:41", "name": "echo",
-        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-07-13
-        17:18:41", "workflow_execution_id": "07f7cffe-bfac-4681-aab6-f15ac80838d1",
-        "workflow_id": "ebbfb446-9876-4918-bce8-f17c373ce068", "processed": true,
-        "published": "{}", "type": "ACTION", "id": "c4d3409b-d088-47d8-9d34-4f62dd10754d"},
-        {"state_info": null, "created_at": "2017-07-13 17:18:49", "name": "echo",
-        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-07-13
-        17:18:49", "workflow_execution_id": "9fbeea17-fd7c-4535-b7af-4fb3051f00e0",
-        "workflow_id": "a0e9b60b-34af-4af4-95b8-0502ae696fe2", "processed": true,
-        "published": "{}", "type": "ACTION", "id": "8a807dc1-d8a6-4032-abab-b65ea18e2b36"},
-        {"state_info": null, "created_at": "2017-07-13 17:18:50", "name": "echo",
-        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-07-13
-        17:18:50", "workflow_execution_id": "e38e9ba8-6c62-46eb-91ad-8deb893a7c89",
-        "workflow_id": "dff68e58-53d3-4f63-b990-0e6333841c8a", "processed": true,
-        "published": "{}", "type": "ACTION", "id": "43e8efcd-6b4a-4666-bd4c-0243d6ec877e"},
-        {"state_info": null, "created_at": "2017-07-13 17:18:51", "name": "echo",
-        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-07-13
-        17:18:51", "workflow_execution_id": "a902798a-426e-4276-8123-a142557632fa",
-        "workflow_id": "3a190f39-2a6d-4bd5-9034-c46826b7fa1c", "processed": true,
-        "published": "{}", "type": "ACTION", "id": "9ac6e029-b150-45b4-a2fc-6fe6650f768f"},
-        {"state_info": null, "created_at": "2017-07-13 17:18:52", "name": "echo",
-        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-07-13
-        17:18:52", "workflow_execution_id": "4d63a69f-43da-4e88-88a6-3f04e43f7a1e",
-        "workflow_id": "2b722fba-82ed-472a-9f2d-2ddb26156789", "processed": true,
-        "published": "{}", "type": "ACTION", "id": "3142b3b1-e743-4d45-8b22-92f3f0120829"},
-        {"state_info": null, "created_at": "2017-07-13 17:18:56", "name": "echo",
-        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-07-13
-        17:18:56", "workflow_execution_id": "4e82904a-c7e7-4790-acd5-3decc20aced7",
-        "workflow_id": "4239eb15-9e28-45c1-9cd1-7fe3baaf073c", "processed": true,
-        "published": "{}", "type": "ACTION", "id": "56095dfc-a844-4b4d-8856-104e76dff973"},
-        {"state_info": null, "created_at": "2017-07-13 17:18:57", "name": "echo",
-        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2017-07-13
-        17:18:57", "workflow_execution_id": "ccdf7656-deff-4fa6-a068-a5cc685ecbe5",
-        "workflow_id": "c270f1e6-ba07-48f4-96e9-4a815a82aee3", "processed": true,
-        "published": "{}", "type": "ACTION", "id": "6c5da716-5534-42e7-abb9-89994d89ed1b"},
-        {"state_info": null, "created_at": "2017-07-13 17:18:58", "name": "echo",
+      string: '{"tasks": [{"state_info": null, "created_at": "2021-02-06 21:59:09",
+        "name": "async", "workflow_name": "echo_test", "state": "RUNNING", "updated_at":
+        null, "workflow_execution_id": "94851037-49bf-4adf-8456-665aed4b32e3", "workflow_id":
+        "f18f6abe-e145-4b93-b1a8-0b2c2258546f", "processed": false, "published": "{}",
+        "type": "ACTION", "id": "f03d7de2-7d3b-475d-a220-a71053d1e4a6"}, {"state_info":
+        null, "created_at": "2021-02-06 21:59:09", "name": "echo", "workflow_name":
+        "echo_test", "state": "SUCCESS", "updated_at": "2021-02-06 21:59:09", "workflow_execution_id":
+        "94851037-49bf-4adf-8456-665aed4b32e3", "workflow_id": "f18f6abe-e145-4b93-b1a8-0b2c2258546f",
+        "processed": true, "published": "{}", "type": "ACTION", "id": "f86dfeb5-3420-46d8-9ae6-089f614daac4"},
+        {"state_info": null, "created_at": "2021-02-06 21:59:11", "name": "async",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2021-02-06
+        21:59:13", "workflow_execution_id": "1152e478-871e-4cf1-be08-49e6fc0ccc5b",
+        "workflow_id": "5358c568-355c-4b35-8fb4-f766f0c83c80", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "8878cbea-8743-4ab6-8820-c9e4da88753e"},
+        {"state_info": null, "created_at": "2021-02-06 21:59:11", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2021-02-06
+        21:59:12", "workflow_execution_id": "1152e478-871e-4cf1-be08-49e6fc0ccc5b",
+        "workflow_id": "5358c568-355c-4b35-8fb4-f766f0c83c80", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "c9f70952-791f-4f1b-898a-6dbb26895a42"},
+        {"state_info": null, "created_at": "2021-02-06 21:59:14", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2021-02-06
+        21:59:14", "workflow_execution_id": "73ddd29e-b39b-4bbc-ad92-733972ab631a",
+        "workflow_id": "23be9f60-1684-42a2-86a9-78805e97ea73", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "7f972580-7867-416a-8808-953624be573e"},
+        {"state_info": null, "created_at": "2021-02-06 21:59:14", "name": "async",
         "workflow_name": "echo_test", "state": "RUNNING", "updated_at": null, "workflow_execution_id":
-        "3e17e113-e761-49d3-aea3-a2e2779c45aa", "workflow_id": "5c1bc71c-c22b-4888-81a5-24b4c2acaaf9",
-        "processed": false, "published": "{}", "type": "ACTION", "id": "f1c50542-e055-4b96-a852-83b985eff9c5"}]}'
-    http_version: 
-  recorded_at: Thu, 13 Jul 2017 17:19:38 GMT
+        "73ddd29e-b39b-4bbc-ad92-733972ab631a", "workflow_id": "23be9f60-1684-42a2-86a9-78805e97ea73",
+        "processed": false, "published": "{}", "type": "ACTION", "id": "83f7e72e-001f-4a06-ac7a-9717638e905d"},
+        {"state_info": null, "created_at": "2021-02-06 21:59:16", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2021-02-06
+        21:59:16", "workflow_execution_id": "ee750aea-21bc-4377-afa8-7aad1b16e05d",
+        "workflow_id": "37f72ec5-a946-4402-a00f-513fac04b308", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "164fb90d-4c69-4e48-ac12-36849e616aa8"},
+        {"state_info": null, "created_at": "2021-02-06 21:59:16", "name": "async",
+        "workflow_name": "echo_test", "state": "RUNNING", "updated_at": null, "workflow_execution_id":
+        "ee750aea-21bc-4377-afa8-7aad1b16e05d", "workflow_id": "37f72ec5-a946-4402-a00f-513fac04b308",
+        "processed": false, "published": "{}", "type": "ACTION", "id": "ba28c8f6-4d3a-42b0-a820-04486e5f72e5"},
+        {"state_info": null, "created_at": "2021-02-06 21:59:19", "name": "async",
+        "workflow_name": "echo_test", "state": "RUNNING", "updated_at": null, "workflow_execution_id":
+        "17972d8e-bf8e-4a6f-b625-f7ce7edf607a", "workflow_id": "6f9970a8-a2dd-4d68-b9fb-9e4f493bdf2f",
+        "processed": false, "published": "{}", "type": "ACTION", "id": "04eeead7-3e59-4e88-a091-222736f96e72"},
+        {"state_info": null, "created_at": "2021-02-06 21:59:19", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2021-02-06
+        21:59:19", "workflow_execution_id": "17972d8e-bf8e-4a6f-b625-f7ce7edf607a",
+        "workflow_id": "6f9970a8-a2dd-4d68-b9fb-9e4f493bdf2f", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "52cb6330-4451-4c5e-a368-ed355f947929"},
+        {"state_info": null, "created_at": "2021-02-06 21:59:27", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2021-02-06
+        21:59:27", "workflow_execution_id": "98aef190-bdef-4bf2-afc1-b1e2319eea65",
+        "workflow_id": "9384d96f-9da9-45f1-8d16-edb98855d517", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "ec492340-1474-4814-b7f7-23dc1ea08d0a"},
+        {"state_info": null, "created_at": "2021-02-06 21:59:28", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2021-02-06
+        21:59:28", "workflow_execution_id": "c17d0e38-5939-4519-acd8-7fd8c72e7469",
+        "workflow_id": "73f1efa4-9917-4649-a056-4ffabe8fd3c3", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "f10c4072-877e-4dc8-a564-a9ac543b630c"},
+        {"state_info": null, "created_at": "2021-02-06 21:59:29", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2021-02-06
+        21:59:29", "workflow_execution_id": "6bd0186f-e78b-4ad3-92df-dadd2667e945",
+        "workflow_id": "6f95c342-bfcd-405d-8430-1505bf0cf583", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "0e645bec-722d-4af3-bda3-83f66af5434c"},
+        {"state_info": null, "created_at": "2021-02-06 21:59:30", "name": "echo",
+        "workflow_name": "echo_test_with_input", "state": "SUCCESS", "updated_at":
+        "2021-02-06 21:59:30", "workflow_execution_id": "e9193049-7972-478a-a97f-526de760a61e",
+        "workflow_id": "6c37907f-9d28-4aef-b959-3e4a88b10565", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "c5d6c007-09bb-4a97-a39f-3be081d991ec"},
+        {"state_info": null, "created_at": "2021-02-06 21:59:32", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2021-02-06
+        21:59:32", "workflow_execution_id": "b956cfef-9183-4650-a440-a4067443fa01",
+        "workflow_id": "4bb36a18-8c54-47d6-9022-e4ba09d6eded", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "08d7e735-0292-4e6f-a566-d9b7df8909c0"},
+        {"state_info": null, "created_at": "2021-02-06 21:59:34", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2021-02-06
+        21:59:34", "workflow_execution_id": "862c9a27-2e97-4575-9161-7ce3d2785f88",
+        "workflow_id": "167178aa-0746-4979-843f-d824d3db77c0", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "ca8f494d-ce83-4cce-b884-5f4e8b8df722"},
+        {"state_info": null, "created_at": "2021-02-06 21:59:35", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2021-02-06
+        21:59:35", "workflow_execution_id": "986d75f3-955b-49c3-8621-da69dcb6e96a",
+        "workflow_id": "3ceea7f0-b588-418d-8d1a-1c3a7c42bb95", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "8e4862d5-654e-46f5-bea8-817776cdd898"},
+        {"state_info": null, "created_at": "2021-02-06 21:59:37", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2021-02-06
+        21:59:37", "workflow_execution_id": "0f159617-62e1-4a9f-94a1-15b787c9b358",
+        "workflow_id": "0fb244ce-b4df-49a4-8a50-ac0bb759f201", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "3da9a404-b313-4911-b9c9-3f7ad044d391"},
+        {"state_info": null, "created_at": "2021-02-06 21:59:40", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2021-02-06
+        21:59:40", "workflow_execution_id": "469a25ef-923a-4fcf-81ea-860ce5700758",
+        "workflow_id": "f314d6c3-1a65-4b49-a5d8-4c18d0d14912", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "b46e0314-1327-4b2f-ab7b-087295f582c1"},
+        {"state_info": null, "created_at": "2021-02-06 21:59:41", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2021-02-06
+        21:59:42", "workflow_execution_id": "961c4054-cc39-464e-a929-a093df570bf3",
+        "workflow_id": "e2f47b15-d69c-4450-89d0-97eb43a8b9e0", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "1bad82d6-c253-4153-a4ee-acbad15ae67d"},
+        {"state_info": null, "created_at": "2021-02-06 21:59:44", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2021-02-06
+        21:59:44", "workflow_execution_id": "c41cd8d4-c99a-4ef1-8fb9-de6e779dad28",
+        "workflow_id": "2cd0293e-d44a-426c-aab0-1d3b4e6aee9f", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "7e3230dd-5e8f-41d3-83f8-9b60f45429e2"},
+        {"state_info": null, "created_at": "2021-02-06 21:59:45", "name": "echo",
+        "workflow_name": "echo_test", "state": "SUCCESS", "updated_at": "2021-02-06
+        21:59:45", "workflow_execution_id": "4ae15e89-0847-45b2-8e5c-16fdada91117",
+        "workflow_id": "b6c54be8-246f-401f-8c66-5da0df6be322", "processed": true,
+        "published": "{}", "type": "ACTION", "id": "d97bec19-4e46-445f-abc5-c29e30a49324"},
+        {"state_info": null, "created_at": "2021-02-06 21:59:46", "name": "echo",
+        "workflow_name": "echo_test", "state": "RUNNING", "updated_at": null, "workflow_execution_id":
+        "7897bab6-0cf9-4091-a4b6-1d6f9030f672", "workflow_id": "d3ebf355-28b9-4486-8622-a3afd66e8460",
+        "processed": false, "published": "{}", "type": "ACTION", "id": "3c9ec2a5-9a3e-4576-bf29-b354fb09fd85"}]}'
+    http_version:
+  recorded_at: Sat, 06 Feb 2021 21:59:46 GMT
 - request:
     method: delete
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows/5c1bc71c-c22b-4888-81a5-24b4c2acaaf9
+    uri: http://localhost:8989/v2/workflows/d3ebf355-28b9-4486-8622-a3afd66e8460
     body:
       encoding: US-ASCII
       string: ''
@@ -201,11 +264,13 @@ http_interactions:
       code: 204
       message: No Content
     headers:
+      Content-Length:
+      - '0'
       Date:
-      - Thu, 13 Jul 2017 17:18:59 GMT
+      - Sat, 06 Feb 2021 21:59:47 GMT
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
-  recorded_at: Thu, 13 Jul 2017 17:19:39 GMT
-recorded_with: VCR 3.0.3
+    http_version:
+  recorded_at: Sat, 06 Feb 2021 21:59:47 GMT
+recorded_with: VCR 5.1.0

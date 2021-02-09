@@ -20,6 +20,7 @@ module MistralClient
     include MistralClient::Mixins::MistralObject
 
     def initialize(server, id: nil)
+      super()
       @server = server
       @path = 'tasks'
       @id = id

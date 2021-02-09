@@ -21,6 +21,7 @@ module MistralClient
     # rubocop:disable Metrics/ParameterLists
     def initialize(server, workflow_id: nil, env: nil, task_name: nil,
                    id: nil, input: nil)
+      super()
       set_attributes(server, workflow_id, env, task_name, id, input)
       if @id
         reload

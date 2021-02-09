@@ -3,9 +3,7 @@ module MistralClient
     module Definable
       # rubocop:disable Metrics/MethodLength
       def parse_definition(definition)
-        if definition.is_a?(Hash) || definition.is_a?(Array)
-          return YAML.dump(definition)
-        end
+        return YAML.dump(definition) if definition.is_a?(Hash) || definition.is_a?(Array)
 
         definition = File.read(definition) if File.exist?(definition)
         # Called outside the if/else to validate the YAML.

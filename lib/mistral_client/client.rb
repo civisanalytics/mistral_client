@@ -38,9 +38,13 @@ module MistralClient
       }
     end
 
-    def method_missing(name, *args, &block)
+    def method_missing(name, *args, **kwargs, &block)
       if self.class.resources.keys.include?(name)
-        self.class.resources[name].new(self, *args)
+        if kwargs.nil? || kwargs.empty?
+          self.class.resources[name].new(self, *args)
+        else
+          self.class.resources[name].new(self, *args, **kwargs)
+        end
       else
         super
       end
@@ -68,9 +72,7 @@ module MistralClient
 
     def check_for_error(resp)
       return if resp.code >= 200 && resp.code < 300
-      if resp.code == 404
-        raise MissingObjectError, JSON.parse(resp.body)['faultstring']
-      end
+      raise MissingObjectError, JSON.parse(resp.body)['faultstring'] if resp.code == 404
 
       raise MistralResponseError.new(resp),
             "Could not perform the requested operation:\n#{resp.body}"

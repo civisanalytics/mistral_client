@@ -5,6 +5,22 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [2.0.0] - 2021-02-09
+
+### Added
+- Added Ruby 2.7 and 3.0 to the Travis build matrix
+
+### Changed
+- Bumped the Ruby version for development to 3.0.0
+- Fixed deprecation warnings around positional and keyword arguments from ruby 2.7.0
+- Updated rubocop to v1.9.1, and fixed rubocop violations
+- Configured rspec to emit warnings, and fix them
+- Re-recorded the spec cassettes
+- Fixed broken links in the README
+
+### Removed
+- Removed Ruby 2.3 and 2.4 from the Travis build matrix
+
 ## [1.3.0] - 2020-04-20
 
 ### Changed
@@ -34,6 +50,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 * Initial Release
 
-[Unreleased]: https://github.com/civisanalytics/mistral_client/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/civisanalytics/mistral_client/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/civisanalytics/mistral_client/compare/v1.3.0...v2.0.0
+[1.3.0]: https://github.com/civisanalytics/mistral_client/compare/v1.2.1...v1.3.0
+[1.2.1]: https://github.com/civisanalytics/mistral_client/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/civisanalytics/mistral_client/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/civisanalytics/mistral_client/compare/v1.0.0...v1.1.0

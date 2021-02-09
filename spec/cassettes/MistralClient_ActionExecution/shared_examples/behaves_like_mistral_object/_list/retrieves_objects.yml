@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows
+    uri: http://localhost:8989/v2/workflows
     body:
       encoding: UTF-8
       string: |
@@ -18,6 +18,12 @@ http_interactions:
     headers:
       Content-Type:
       - text/plain
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 201
@@ -28,25 +34,31 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 29 Sep 2017 15:47:19 GMT
+      - Sat, 06 Feb 2021 21:59:19 GMT
     body:
       encoding: UTF-8
       string: '{"workflows": [{"definition": "---\n  version: \"2.0\"\n  echo_test:\n    type:
         direct\n    tasks:\n      echo:\n        action: std.echo output=\"ok\"\n      async:\n        action:
-        std.async_noop\n", "name": "echo_test", "tags": [], "created_at": "2017-09-29
-        15:47:19", "scope": "private", "input": "", "project_id": "<default-project>",
-        "id": "328ca582-1491-44a4-8bfc-c1be160d07d4"}]}'
-    http_version: 
-  recorded_at: Fri, 29 Sep 2017 15:48:12 GMT
+        std.async_noop\n", "name": "echo_test", "tags": [], "created_at": "2021-02-06
+        21:59:19", "scope": "private", "input": "", "project_id": "<default-project>",
+        "id": "6f9970a8-a2dd-4d68-b9fb-9e4f493bdf2f"}]}'
+    http_version:
+  recorded_at: Sat, 06 Feb 2021 21:59:19 GMT
 - request:
     method: post
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/executions
+    uri: http://localhost:8989/v2/executions
     body:
       encoding: UTF-8
-      string: '{"workflow_id":"328ca582-1491-44a4-8bfc-c1be160d07d4"}'
+      string: '{"workflow_id":"6f9970a8-a2dd-4d68-b9fb-9e4f493bdf2f"}'
     headers:
       Content-Type:
       - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 201
@@ -57,18 +69,18 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 29 Sep 2017 15:47:19 GMT
+      - Sat, 06 Feb 2021 21:59:19 GMT
     body:
       encoding: UTF-8
-      string: '{"state_info": null, "created_at": "2017-09-29 15:47:19", "description":
+      string: '{"state_info": null, "created_at": "2021-02-06 21:59:19", "description":
         "", "state": "RUNNING", "workflow_name": "echo_test", "task_execution_id":
-        null, "updated_at": "2017-09-29 15:47:19", "workflow_id": "328ca582-1491-44a4-8bfc-c1be160d07d4",
-        "params": "{}", "output": "{}", "input": "{}", "id": "0b8b9aac-2eb1-4fbd-b66f-1981781f562e"}'
-    http_version: 
-  recorded_at: Fri, 29 Sep 2017 15:48:13 GMT
+        null, "updated_at": "2021-02-06 21:59:19", "workflow_id": "6f9970a8-a2dd-4d68-b9fb-9e4f493bdf2f",
+        "params": "{}", "output": "{}", "input": "{}", "id": "17972d8e-bf8e-4a6f-b625-f7ce7edf607a"}'
+    http_version:
+  recorded_at: Sat, 06 Feb 2021 21:59:19 GMT
 - request:
     method: get
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/tasks?workflow_execution_id=0b8b9aac-2eb1-4fbd-b66f-1981781f562e
+    uri: http://localhost:8989/v2/tasks?workflow_execution_id=17972d8e-bf8e-4a6f-b625-f7ce7edf607a
     body:
       encoding: US-ASCII
       string: ''
@@ -89,23 +101,23 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 29 Sep 2017 15:47:19 GMT
+      - Sat, 06 Feb 2021 21:59:19 GMT
     body:
       encoding: UTF-8
-      string: '{"tasks": [{"state_info": null, "created_at": "2017-09-29 15:47:19",
-        "name": "echo", "workflow_name": "echo_test", "state": "RUNNING", "updated_at":
-        null, "workflow_execution_id": "0b8b9aac-2eb1-4fbd-b66f-1981781f562e", "workflow_id":
-        "328ca582-1491-44a4-8bfc-c1be160d07d4", "processed": false, "published": "{}",
-        "type": "ACTION", "id": "a79fab97-c75b-41d0-a40e-bea0b688f5d6"}, {"state_info":
-        null, "created_at": "2017-09-29 15:47:19", "name": "async", "workflow_name":
+      string: '{"tasks": [{"state_info": null, "created_at": "2021-02-06 21:59:19",
+        "name": "async", "workflow_name": "echo_test", "state": "RUNNING", "updated_at":
+        null, "workflow_execution_id": "17972d8e-bf8e-4a6f-b625-f7ce7edf607a", "workflow_id":
+        "6f9970a8-a2dd-4d68-b9fb-9e4f493bdf2f", "processed": false, "published": "{}",
+        "type": "ACTION", "id": "04eeead7-3e59-4e88-a091-222736f96e72"}, {"state_info":
+        null, "created_at": "2021-02-06 21:59:19", "name": "echo", "workflow_name":
         "echo_test", "state": "RUNNING", "updated_at": null, "workflow_execution_id":
-        "0b8b9aac-2eb1-4fbd-b66f-1981781f562e", "workflow_id": "328ca582-1491-44a4-8bfc-c1be160d07d4",
-        "processed": false, "published": "{}", "type": "ACTION", "id": "f7ba171d-2e04-4ed3-9ddf-f2deb758ef53"}]}'
-    http_version: 
-  recorded_at: Fri, 29 Sep 2017 15:48:13 GMT
+        "17972d8e-bf8e-4a6f-b625-f7ce7edf607a", "workflow_id": "6f9970a8-a2dd-4d68-b9fb-9e4f493bdf2f",
+        "processed": false, "published": "{}", "type": "ACTION", "id": "52cb6330-4451-4c5e-a368-ed355f947929"}]}'
+    http_version:
+  recorded_at: Sat, 06 Feb 2021 21:59:19 GMT
 - request:
     method: get
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/action_executions?task_execution_id=a79fab97-c75b-41d0-a40e-bea0b688f5d6
+    uri: http://localhost:8989/v2/action_executions?task_execution_id=52cb6330-4451-4c5e-a368-ed355f947929
     body:
       encoding: US-ASCII
       string: ''
@@ -126,20 +138,20 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 29 Sep 2017 15:47:20 GMT
+      - Sat, 06 Feb 2021 21:59:20 GMT
     body:
       encoding: UTF-8
-      string: '{"action_executions": [{"state_info": null, "created_at": "2017-09-29
-        15:47:19", "name": "std.echo", "tags": null, "workflow_name": "echo_test",
-        "task_execution_id": "a79fab97-c75b-41d0-a40e-bea0b688f5d6", "updated_at":
-        "2017-09-29 15:47:19", "state": "SUCCESS", "task_name": "echo", "output":
+      string: '{"action_executions": [{"state_info": null, "created_at": "2021-02-06
+        21:59:19", "name": "std.echo", "tags": null, "workflow_name": "echo_test",
+        "task_execution_id": "52cb6330-4451-4c5e-a368-ed355f947929", "updated_at":
+        "2021-02-06 21:59:19", "state": "SUCCESS", "task_name": "echo", "output":
         "{\"result\": \"ok\"}", "input": "{\"output\": \"ok\"}", "accepted": true,
-        "id": "ab0a5360-8293-4035-a3e9-1b2828caca39", "description": ""}]}'
-    http_version: 
-  recorded_at: Fri, 29 Sep 2017 15:48:14 GMT
+        "id": "04dd09c1-0c3f-40ca-a78f-fb0d6bd3b31a", "description": ""}]}'
+    http_version:
+  recorded_at: Sat, 06 Feb 2021 21:59:20 GMT
 - request:
     method: get
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/action_executions
+    uri: http://localhost:8989/v2/action_executions
     body:
       encoding: US-ASCII
       string: ''
@@ -156,411 +168,67 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '34160'
+      - '3966'
       Content-Type:
       - application/json
       Date:
-      - Fri, 29 Sep 2017 15:47:20 GMT
+      - Sat, 06 Feb 2021 21:59:20 GMT
     body:
       encoding: UTF-8
-      string: '{"action_executions": [{"state_info": null, "created_at": "2017-09-27
-        14:01:59", "name": "civis.run_job", "tags": null, "workflow_name": "platform_workflow_15_43_e41994cd53bf48b936c6ba7b20aa2b18",
-        "task_execution_id": "fafba2df-67b2-4f3e-89e4-8dd6bdb68933", "updated_at":
-        "2017-09-27 14:06:06", "state": "SUCCESS", "task_name": "long", "output":
-        "{\"result\": {}}", "input": "{\"enc_civis_api_key\": \"a1iS8lEhF7jopfjf4dDa93O8DxZoVE253V8lA4c9nV3hvkkd79N7l8ToZDLH\\nV0fTMe6DxtVRpxC1mYMLEaBLoG5yxzTOg0Ij7nXoSI4Gvthdaqg6yLm8dAHO\\ngYC+3XFDbCxNK1TliAc=\\n\",
-        \"action_context\": {\"action_execution_id\": \"d793a28f-82a8-4831-9675-91c9a4bcdc74\",
-        \"task_id\": \"fafba2df-67b2-4f3e-89e4-8dd6bdb68933\", \"workflow_name\":
-        \"platform_workflow_15_43_e41994cd53bf48b936c6ba7b20aa2b18\", \"workflow_execution_id\":
-        \"d7d17ded-bce9-4bbf-b3af-89eb7bdc0609\", \"task_tags\": null, \"task_name\":
-        \"long\", \"callback_url\": \"/v2/action_executions/d793a28f-82a8-4831-9675-91c9a4bcdc74\"},
-        \"job_id\": 23}", "accepted": true, "id": "d793a28f-82a8-4831-9675-91c9a4bcdc74",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-27 14:06:06",
-        "name": "civis.run_job", "tags": null, "workflow_name": "platform_workflow_15_43_e41994cd53bf48b936c6ba7b20aa2b18",
-        "task_execution_id": "4bce6046-9172-4bd8-8787-73caf3adcac5", "updated_at":
-        "2017-09-27 14:53:00", "state": "ERROR", "task_name": "short", "output": "{\"result\":
-        \"Failed to run action [action_ex_id=a2fd6827-b950-47bd-81b8-bb24f13f874c,
-        action_cls=''<class ''mistral.actions.action_factory.RunJobAction''>'', attributes=''{}'',
-        params=''{u''enc_civis_api_key'': u''a1iS8lEhF7jopfjf4dDa93O8DxZoVE253V8lA4c9nV3hvkkd79N7l8ToZDLH\\\\nV0fTMe6DxtVRpxC1mYMLEaBLoG5yxzTOg0Ij7nXoSI4Gvthdaqg6yLm8dAHO\\\\ngYC+3XFDbCxNK1TliAc=\\\\n'',
-        u''action_context'': {u''action_execution_id'': u''a2fd6827-b950-47bd-81b8-bb24f13f874c'',
-        u''task_id'': u''4bce6046-9172-4bd8-8787-73caf3adcac5'', u''workflow_name'':
-        u''platform_workflow_15_43_e41994cd53bf48b936c6ba7b20aa2b18'', u''workflow_execution_id'':
-        u''d7d17ded-bce9-4bbf-b3af-89eb7bdc0609'', u''task_tags'': None, u''task_name'':
-        u''short'', u''callback_url'': u''/v2/action_executions/a2fd6827-b950-47bd-81b8-bb24f13f874c''},
-        u''job_id'': 24}'']\\n Expecting value: line 1 column 1 (char 0)\"}", "input":
-        "{\"enc_civis_api_key\": \"a1iS8lEhF7jopfjf4dDa93O8DxZoVE253V8lA4c9nV3hvkkd79N7l8ToZDLH\\nV0fTMe6DxtVRpxC1mYMLEaBLoG5yxzTOg0Ij7nXoSI4Gvthdaqg6yLm8dAHO\\ngYC+3XFDbCxNK1TliAc=\\n\",
-        \"action_context\": {\"action_execution_id\": \"a2fd6827-b950-47bd-81b8-bb24f13f874c\",
-        \"task_id\": \"4bce6046-9172-4bd8-8787-73caf3adcac5\", \"workflow_name\":
-        \"platform_workflow_15_43_e41994cd53bf48b936c6ba7b20aa2b18\", \"workflow_execution_id\":
-        \"d7d17ded-bce9-4bbf-b3af-89eb7bdc0609\", \"task_tags\": null, \"task_name\":
-        \"short\", \"callback_url\": \"/v2/action_executions/a2fd6827-b950-47bd-81b8-bb24f13f874c\"},
-        \"job_id\": 24}", "accepted": true, "id": "a2fd6827-b950-47bd-81b8-bb24f13f874c",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-27 16:28:38",
-        "name": "civis.run_job", "tags": null, "workflow_name": "platform_workflow_15_44_ae985dab55576d94e26d8ec69ae4e7bb",
-        "task_execution_id": "7c534834-1723-4eaa-8513-131db1ba4dd2", "updated_at":
-        "2017-09-27 16:28:45", "state": "ERROR", "task_name": "long", "output": "{\"result\":
-        \"Failed to run action [action_ex_id=e24d5148-e5ee-47ff-bb06-993c2373476b,
-        action_cls=''<class ''mistral.actions.action_factory.RunJobAction''>'', attributes=''{}'',
-        params=''{u''enc_civis_api_key'': u''pZofCyPDp947y5BIDJ3d+cz+zmWlJkSxDacHbpqL5jYCrokHw2rQOdbxibVi\\\\nDABnKxGlw6r49jijeeJtThrT9XP45MysYnZS31c8XVIENPnqM/YYVHFiBF5N\\\\nsp2AXXJyoHaMcv/DRH0=\\\\n'',
-        u''action_context'': {u''action_execution_id'': u''e24d5148-e5ee-47ff-bb06-993c2373476b'',
-        u''task_id'': u''7c534834-1723-4eaa-8513-131db1ba4dd2'', u''workflow_name'':
-        u''platform_workflow_15_44_ae985dab55576d94e26d8ec69ae4e7bb'', u''workflow_execution_id'':
-        u''e19d476b-2c8b-4a4e-98d4-6caa7fd50127'', u''task_tags'': None, u''task_name'':
-        u''long'', u''callback_url'': u''/v2/action_executions/e24d5148-e5ee-47ff-bb06-993c2373476b''},
-        u''job_id'': 24}'']\\n (409) The job cannot be queued because it is already
-        running\"}", "input": "{\"enc_civis_api_key\": \"pZofCyPDp947y5BIDJ3d+cz+zmWlJkSxDacHbpqL5jYCrokHw2rQOdbxibVi\\nDABnKxGlw6r49jijeeJtThrT9XP45MysYnZS31c8XVIENPnqM/YYVHFiBF5N\\nsp2AXXJyoHaMcv/DRH0=\\n\",
-        \"action_context\": {\"action_execution_id\": \"e24d5148-e5ee-47ff-bb06-993c2373476b\",
-        \"task_id\": \"7c534834-1723-4eaa-8513-131db1ba4dd2\", \"workflow_name\":
-        \"platform_workflow_15_44_ae985dab55576d94e26d8ec69ae4e7bb\", \"workflow_execution_id\":
-        \"e19d476b-2c8b-4a4e-98d4-6caa7fd50127\", \"task_tags\": null, \"task_name\":
-        \"long\", \"callback_url\": \"/v2/action_executions/e24d5148-e5ee-47ff-bb06-993c2373476b\"},
-        \"job_id\": 24}", "accepted": true, "id": "e24d5148-e5ee-47ff-bb06-993c2373476b",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-27 16:40:06",
-        "name": "civis.run_job", "tags": null, "workflow_name": "platform_workflow_15_45_3e3499868dd257f03a2edac2a5e432b0",
-        "task_execution_id": "2278c1ad-5fed-4048-b001-3d318f46f032", "updated_at":
-        "2017-09-27 16:47:21", "state": "SUCCESS", "task_name": "long", "output":
-        "{\"result\": {\"job_id\": 24, \"run_id\": 41, \"finished_at\": \"2017-09-27T16:52:05.000Z\",
-        \"state\": \"succeeded\", \"error\": null, \"started_at\": \"2017-09-27T16:52:02.000Z\",
-        \"outputs\": []}}", "input": "{\"enc_civis_api_key\": \"5AiVgjUxE4oPRkt9+NR90N6zGJzSCB7Fxr30rRgjw97NI2kq8Bf4tqW6YHd1\\nQAaxXDpcycoBK7ypGLitVETOCK6rlZ1DQ2beu/7eTkmCSx/G+U9YvNFxwvUn\\nl9x3h6CBrH+vzm/+iZY=\\n\",
-        \"action_context\": {\"action_execution_id\": \"88c7eb14-0f68-4dc8-8e21-7ed36fc8b505\",
-        \"task_id\": \"2278c1ad-5fed-4048-b001-3d318f46f032\", \"workflow_name\":
-        \"platform_workflow_15_45_3e3499868dd257f03a2edac2a5e432b0\", \"workflow_execution_id\":
-        \"2eb69cc1-5442-4fba-9944-98e673af2df7\", \"task_tags\": null, \"task_name\":
-        \"long\", \"callback_url\": \"/v2/action_executions/88c7eb14-0f68-4dc8-8e21-7ed36fc8b505\"},
-        \"job_id\": 24}", "accepted": true, "id": "88c7eb14-0f68-4dc8-8e21-7ed36fc8b505",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-27 16:47:21",
-        "name": "civis.run_job", "tags": null, "workflow_name": "platform_workflow_15_45_3e3499868dd257f03a2edac2a5e432b0",
-        "task_execution_id": "91e66ad6-e71e-430a-be7f-e36faf020b15", "updated_at":
-        "2017-09-27 16:48:08", "state": "SUCCESS", "task_name": "short", "output":
-        "{\"result\": {\"job_id\": 48, \"run_id\": 42, \"finished_at\": \"2017-09-27T16:52:54.000Z\",
-        \"state\": \"succeeded\", \"error\": null, \"started_at\": \"2017-09-27T16:52:52.000Z\",
-        \"outputs\": []}}", "input": "{\"enc_civis_api_key\": \"5AiVgjUxE4oPRkt9+NR90N6zGJzSCB7Fxr30rRgjw97NI2kq8Bf4tqW6YHd1\\nQAaxXDpcycoBK7ypGLitVETOCK6rlZ1DQ2beu/7eTkmCSx/G+U9YvNFxwvUn\\nl9x3h6CBrH+vzm/+iZY=\\n\",
-        \"action_context\": {\"action_execution_id\": \"4242c4de-4f3d-417a-8114-5cf5363644f7\",
-        \"task_id\": \"91e66ad6-e71e-430a-be7f-e36faf020b15\", \"workflow_name\":
-        \"platform_workflow_15_45_3e3499868dd257f03a2edac2a5e432b0\", \"workflow_execution_id\":
-        \"2eb69cc1-5442-4fba-9944-98e673af2df7\", \"task_tags\": null, \"task_name\":
-        \"short\", \"callback_url\": \"/v2/action_executions/4242c4de-4f3d-417a-8114-5cf5363644f7\"},
-        \"job_id\": 48}", "accepted": true, "id": "4242c4de-4f3d-417a-8114-5cf5363644f7",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-27 17:26:04",
-        "name": "civis.run_job", "tags": null, "workflow_name": "platform_workflow_15_46_e3837c80e846dda2114a44228e1b390f",
-        "task_execution_id": "4de19772-77c0-4f29-bb31-927e5caf5784", "updated_at":
-        "2017-09-27 17:27:01", "state": "SUCCESS", "task_name": "long", "output":
-        "{\"result\": {\"job_id\": 24, \"run_id\": 43, \"finished_at\": \"2017-09-27T17:31:46.000Z\",
-        \"state\": \"succeeded\", \"error\": null, \"started_at\": \"2017-09-27T17:31:44.000Z\",
-        \"outputs\": []}}", "input": "{\"enc_civis_api_key\": \"mH6ufds2yY5KEvXBNxyVlGaGddURTDp4vRHZNKmAd0kt1ad7JD160F0u3kNx\\nN0fc8Laj2supJ0CGbAdKnzBBkOetcui2XPndstXP52xsyuMbCt7DqmKAhs8v\\n3W3g/6mb3HMJ90bwdX4=\\n\",
-        \"action_context\": {\"action_execution_id\": \"ff3179a1-3598-4ed7-97a2-2ef401d811dc\",
-        \"task_id\": \"4de19772-77c0-4f29-bb31-927e5caf5784\", \"workflow_name\":
-        \"platform_workflow_15_46_e3837c80e846dda2114a44228e1b390f\", \"workflow_execution_id\":
-        \"95dab57b-5673-4392-8210-17e8d73bc8e7\", \"task_tags\": null, \"task_name\":
-        \"long\", \"callback_url\": \"/v2/action_executions/ff3179a1-3598-4ed7-97a2-2ef401d811dc\"},
-        \"job_id\": 24}", "accepted": true, "id": "ff3179a1-3598-4ed7-97a2-2ef401d811dc",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-27 17:27:01",
-        "name": "civis.run_job", "tags": null, "workflow_name": "platform_workflow_15_46_e3837c80e846dda2114a44228e1b390f",
-        "task_execution_id": "9038e5ba-5198-45fb-8966-1e14e2b44a23", "updated_at":
-        "2017-09-27 17:27:47", "state": "SUCCESS", "task_name": "short", "output":
-        "{\"result\": {\"job_id\": 48, \"run_id\": 44, \"finished_at\": \"2017-09-27T17:32:36.000Z\",
-        \"state\": \"succeeded\", \"error\": null, \"started_at\": \"2017-09-27T17:32:34.000Z\",
-        \"outputs\": []}}", "input": "{\"enc_civis_api_key\": \"mH6ufds2yY5KEvXBNxyVlGaGddURTDp4vRHZNKmAd0kt1ad7JD160F0u3kNx\\nN0fc8Laj2supJ0CGbAdKnzBBkOetcui2XPndstXP52xsyuMbCt7DqmKAhs8v\\n3W3g/6mb3HMJ90bwdX4=\\n\",
-        \"action_context\": {\"action_execution_id\": \"f34e0124-3329-4b8a-bdfb-77926a9740f9\",
-        \"task_id\": \"9038e5ba-5198-45fb-8966-1e14e2b44a23\", \"workflow_name\":
-        \"platform_workflow_15_46_e3837c80e846dda2114a44228e1b390f\", \"workflow_execution_id\":
-        \"95dab57b-5673-4392-8210-17e8d73bc8e7\", \"task_tags\": null, \"task_name\":
-        \"short\", \"callback_url\": \"/v2/action_executions/f34e0124-3329-4b8a-bdfb-77926a9740f9\"},
-        \"job_id\": 48}", "accepted": true, "id": "f34e0124-3329-4b8a-bdfb-77926a9740f9",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-27 17:34:01",
-        "name": "civis.run_job", "tags": null, "workflow_name": "platform_workflow_15_47_b84190770b029bf3a3e979d3666e2cf7",
-        "task_execution_id": "d826aa9a-7e40-4cfe-b2f9-2aaca09fe3fd", "updated_at":
-        "2017-09-27 17:34:52", "state": "SUCCESS", "task_name": "long", "output":
-        "{\"result\": {\"job_id\": 24, \"run_id\": 45, \"finished_at\": \"2017-09-27T12:39:44.000-05:00\",
-        \"state\": \"succeeded\", \"error\": null, \"started_at\": \"2017-09-27T12:39:42.000-05:00\"}}",
-        "input": "{\"enc_civis_api_key\": \"7ooau5WX6WYGBVLqeFQLYPxdzAzk76o7AsildUXgPHC/Wy8kdlQxuemGtliN\\n2N7P695JKEzimr43ow59wXOnSauti1mUWj7HV9bWZp10SPqYkNI0RKgEWJW9\\nmUuhtLmLn7X9v+JArSI=\\n\",
-        \"action_context\": {\"action_execution_id\": \"fff5c4d8-0296-44fe-a5dd-605344872bfc\",
-        \"task_id\": \"d826aa9a-7e40-4cfe-b2f9-2aaca09fe3fd\", \"workflow_name\":
-        \"platform_workflow_15_47_b84190770b029bf3a3e979d3666e2cf7\", \"workflow_execution_id\":
-        \"68514ba7-e2d3-4eb5-8db6-3bb32ab99eba\", \"task_tags\": null, \"task_name\":
-        \"long\", \"callback_url\": \"/v2/action_executions/fff5c4d8-0296-44fe-a5dd-605344872bfc\"},
-        \"job_id\": 24}", "accepted": true, "id": "fff5c4d8-0296-44fe-a5dd-605344872bfc",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-27 17:34:52",
-        "name": "civis.run_job", "tags": null, "workflow_name": "platform_workflow_15_47_b84190770b029bf3a3e979d3666e2cf7",
-        "task_execution_id": "9564d00e-8b78-4a76-b19a-52c70dd20249", "updated_at":
-        "2017-09-27 17:35:51", "state": "SUCCESS", "task_name": "short", "output":
-        "{\"result\": {\"job_id\": 48, \"run_id\": 46, \"finished_at\": \"2017-09-27T12:40:43.000-05:00\",
-        \"state\": \"succeeded\", \"error\": null, \"started_at\": \"2017-09-27T12:40:41.000-05:00\"}}",
-        "input": "{\"enc_civis_api_key\": \"7ooau5WX6WYGBVLqeFQLYPxdzAzk76o7AsildUXgPHC/Wy8kdlQxuemGtliN\\n2N7P695JKEzimr43ow59wXOnSauti1mUWj7HV9bWZp10SPqYkNI0RKgEWJW9\\nmUuhtLmLn7X9v+JArSI=\\n\",
-        \"action_context\": {\"action_execution_id\": \"d5d30532-3006-4c3a-a456-a734c91118fb\",
-        \"task_id\": \"9564d00e-8b78-4a76-b19a-52c70dd20249\", \"workflow_name\":
-        \"platform_workflow_15_47_b84190770b029bf3a3e979d3666e2cf7\", \"workflow_execution_id\":
-        \"68514ba7-e2d3-4eb5-8db6-3bb32ab99eba\", \"task_tags\": null, \"task_name\":
-        \"short\", \"callback_url\": \"/v2/action_executions/d5d30532-3006-4c3a-a456-a734c91118fb\"},
-        \"job_id\": 48}", "accepted": true, "id": "d5d30532-3006-4c3a-a456-a734c91118fb",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-28 18:43:51",
-        "name": "civis.run_job", "tags": null, "workflow_name": "platform_workflow_15_48_fc82a879e7803dcb17489aa79096b5a5",
-        "task_execution_id": "de8c6477-925c-4a63-9d2f-ebd1479280d0", "updated_at":
-        "2017-09-28 19:09:18", "state": "ERROR", "task_name": "long", "output": "{\"result\":
-        \"Failed to run action [action_ex_id=4929fe9b-b037-402f-97ec-8f7af7ebe65e,
-        action_cls=''<class ''mistral.actions.action_factory.RunJobAction''>'', attributes=''{}'',
-        params=''{u''enc_civis_api_key'': u''rljPSFzWm2fLPzzXe027X0noGF70/3sBzmmCO2OMVB08tmISHpnuOWS+EOl8\\\\n6Sak9AvVN0ykL/GRRBE9IsNB9gngoDPZQlAsZ29cWnj0Gt5DJFbE1dK9yG10\\\\nOquGUPHnAG+kHoU1Bug=\\\\n'',
-        u''action_context'': {u''action_execution_id'': u''4929fe9b-b037-402f-97ec-8f7af7ebe65e'',
-        u''task_id'': u''de8c6477-925c-4a63-9d2f-ebd1479280d0'', u''workflow_name'':
-        u''platform_workflow_15_48_fc82a879e7803dcb17489aa79096b5a5'', u''workflow_execution_id'':
-        u''6191a5bb-0d53-44c3-93c0-bd724602bc09'', u''task_tags'': None, u''task_name'':
-        u''long'', u''callback_url'': u''/v2/action_executions/4929fe9b-b037-402f-97ec-8f7af7ebe65e''},
-        u''job_id'': 23}'']\\n Expecting value: line 1 column 1 (char 0)\"}", "input":
-        "{\"enc_civis_api_key\": \"rljPSFzWm2fLPzzXe027X0noGF70/3sBzmmCO2OMVB08tmISHpnuOWS+EOl8\\n6Sak9AvVN0ykL/GRRBE9IsNB9gngoDPZQlAsZ29cWnj0Gt5DJFbE1dK9yG10\\nOquGUPHnAG+kHoU1Bug=\\n\",
-        \"action_context\": {\"action_execution_id\": \"4929fe9b-b037-402f-97ec-8f7af7ebe65e\",
-        \"task_id\": \"de8c6477-925c-4a63-9d2f-ebd1479280d0\", \"workflow_name\":
-        \"platform_workflow_15_48_fc82a879e7803dcb17489aa79096b5a5\", \"workflow_execution_id\":
-        \"6191a5bb-0d53-44c3-93c0-bd724602bc09\", \"task_tags\": null, \"task_name\":
-        \"long\", \"callback_url\": \"/v2/action_executions/4929fe9b-b037-402f-97ec-8f7af7ebe65e\"},
-        \"job_id\": 23}", "accepted": true, "id": "4929fe9b-b037-402f-97ec-8f7af7ebe65e",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 14:54:42",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "3a83bb11-d0fe-447a-a371-da19659bdf14", "updated_at": "2017-09-29 14:54:42",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "d839a6f0-9a7e-4872-a449-6c20148b3e1a",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 14:54:45",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "bcbe64b2-2cf4-47e3-9ceb-41e252a187b3", "updated_at": "2017-09-29 14:54:45",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "c2e099c8-e080-4587-a6d9-54e068e5af4b",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 14:55:49",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "d838e85d-0a81-429e-9d61-356d6c780b7a", "updated_at": "2017-09-29 14:55:49",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "8ab26599-2fd2-40b3-aa29-ba4cd9ca641b",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 14:55:51",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "5aa52c95-5b0e-4fbe-b2b9-280451f9df3a", "updated_at": "2017-09-29 14:55:51",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "544a5628-0bff-4c7e-9972-d2b2895f34dd",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 14:55:54",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "5ec71e1c-9858-4438-a8b0-e26dcd0a3838", "updated_at": "2017-09-29 14:55:54",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "0df0283c-d61a-487b-be00-a98c69f4bfc8",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 14:55:56",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "09b2ee0f-9a2a-4927-97cb-6e6f11c385b8", "updated_at": "2017-09-29 14:55:56",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "406720d2-7bd9-4fad-a883-000241670f28",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 14:55:58",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "33a86667-c0b3-4128-9e77-d39712e09666", "updated_at": "2017-09-29 14:55:58",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "21681ae4-3697-4abf-b596-dce5da7da93b",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 14:59:32",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "3080839b-8515-43ea-bca1-1f97212000c9", "updated_at": "2017-09-29 14:59:32",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "7718e3c1-0d1f-4893-8fae-f50d5c897906",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 14:59:34",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "ecb5035d-a5da-408a-85ee-d88b9163f94c", "updated_at": "2017-09-29 14:59:35",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "aae4d957-c317-4ab1-bcf2-c061d664baba",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 14:59:37",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "922b6ed4-ba53-401d-8676-a020af206a89", "updated_at": "2017-09-29 14:59:37",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "84f697dd-4236-444f-8189-d388024c9983",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 14:59:39",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "4df7b881-009a-43f0-bb92-c4995c4fb7b4", "updated_at": "2017-09-29 14:59:39",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "311d9669-16ee-4343-9c68-2f0c314eb6f2",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 14:59:42",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "da2a1c23-7865-4232-8103-1942fa48a7da", "updated_at": "2017-09-29 14:59:42",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "2b38d86b-1184-4a96-ade8-8aa7dd124854",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:34:17",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "dceca8c1-653a-433b-a18c-7c38d9d8875f", "updated_at": "2017-09-29 15:34:17",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "60b07ca2-dd41-493c-a10c-29a5abfa46fc",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:34:20",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "9348e4f8-6d3a-452f-8920-4d5e661e1917", "updated_at": "2017-09-29 15:34:20",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "6b44f567-99ba-431d-bfcf-399f0df98304",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:34:22",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "f68e2da7-4080-4af2-971c-0600717046d1", "updated_at": "2017-09-29 15:34:22",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "b556d8a8-52a6-4e3e-aab4-4b137e702231",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:34:24",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "0c0752ac-27dd-4008-b0d7-7ce06960f935", "updated_at": "2017-09-29 15:34:25",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "12b548dd-2277-4b02-83ab-776d2a1758f9",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:35:56",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "24301111-9ec9-4350-ac16-403c3f69f6fe", "updated_at": "2017-09-29 15:35:56",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "45c97b6e-7cd4-42f0-bd7f-58e069944560",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:36:09",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "cb278139-2942-409e-ade1-2ca6aa5b28e0", "updated_at": "2017-09-29 15:36:09",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "88aa5031-9ca7-4f16-9775-57d90fff5b54",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:36:11",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "003037ba-0c51-46b9-bb05-592208028263", "updated_at": "2017-09-29 15:36:11",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "cc57936a-d8e5-4f57-8f67-167ca327cd24",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:36:14",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "7ff426b9-d2cd-4d80-9427-291077982589", "updated_at": "2017-09-29 15:36:14",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "d6d66cc9-0b7a-416b-bfce-f234933a1ca5",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:36:16",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "57ff7b79-8f87-4f57-8e46-35a089555cbd", "updated_at": "2017-09-29 15:36:16",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "df8db810-0fda-464e-94fa-40a0c6f52841",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:36:18",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "d714cdd0-c2a8-4787-aa27-aab02ae91e94", "updated_at": "2017-09-29 15:36:18",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "a4cb34aa-d165-4145-b33a-664d780ec19d",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:38:28",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "711b89cd-c33e-405c-93d1-e658d22802c2", "updated_at": "2017-09-29 15:38:28",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "c5c825a5-1c00-48f1-9772-de18af779f9e",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:38:31",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "7db45b0c-2123-4e26-9fdd-6223479ca348", "updated_at": "2017-09-29 15:38:31",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "02f6f360-03c3-4bc1-a1a7-21c49dea2b08",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:38:33",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "d533052f-d91a-4883-b162-2df8d8369691", "updated_at": "2017-09-29 15:38:33",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "1a0fce10-37b8-4ef6-b60c-c4fa7d483276",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:38:35",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "3d72f42f-9e87-4f85-870c-bb7a567993e1", "updated_at": "2017-09-29 15:38:35",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "3b651c4f-3952-4cfa-84b0-a9b775ec73b5",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:38:38",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "836f9b74-b61a-437d-a51e-06393a3d6cd9", "updated_at": "2017-09-29 15:38:38",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "8768906f-4faf-4cb3-8f33-67a3e0f593be",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:40:10",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "1c977e53-aee1-46bb-a2a7-0fa82ff062a6", "updated_at": "2017-09-29 15:40:10",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "cae69ce0-2c7d-4426-8725-9b9529cd1ffc",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:40:12",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "7597fa0d-59c7-4409-909f-a8758de1d094", "updated_at": "2017-09-29 15:40:12",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "a22cc326-232c-4abb-aab3-5e8eab33dd5d",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:40:14",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "b0c3de37-f62a-4cfd-b770-24d626fe0f65", "updated_at": "2017-09-29 15:40:14",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "9f28aa87-6930-4cef-bcfe-6af484b514c3",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:40:17",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "1b4c4f7a-e288-41bf-88c5-ac66d0f49b54", "updated_at": "2017-09-29 15:40:17",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "0de12e83-0501-4c36-bf25-0f4d2e91bf75",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:40:19",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "428e1b2e-82e5-4f30-8179-7ab44af9b68c", "updated_at": "2017-09-29 15:40:19",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "bbc34723-d94c-46c5-9e39-3a8beeabb2e8",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:41:05",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "05d9f8b8-2634-43bf-b440-31ee14925bbe", "updated_at": "2017-09-29 15:41:06",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "15699e67-e1ed-42f1-9a4a-4bfd89ca3147",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:41:08",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "300c9e91-a215-4945-8561-1f41d0de1ecf", "updated_at": "2017-09-29 15:41:08",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "09ba8de4-17a5-4cea-9036-6d618d193cbc",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:41:10",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "c2d88b4c-1883-4ad0-8077-f982f854ebd2", "updated_at": "2017-09-29 15:41:10",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "e0d3b0ac-efde-4853-ba46-12f31e8c34e0",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:41:12",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "a7bc82bc-f1af-457c-8664-a3591c4871dc", "updated_at": "2017-09-29 15:41:13",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "3cf2bfcd-bf7a-4418-800c-ee2b77700305",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:41:15",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "e217ce97-6969-4497-844e-0b383f9acaf3", "updated_at": "2017-09-29 15:41:15",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "256bba07-7b00-4439-b721-c32a6e7cd237",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:44:02",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "ad539093-dec5-46b9-b5df-84a0b8789ec1", "updated_at": "2017-09-29 15:44:02",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "f968e2fa-7f20-49e1-b487-1c90bff44528",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:44:10",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "e660e0a2-01c9-4bfd-80cd-2295c747f629", "updated_at": "2017-09-29 15:44:10",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "8ada4cf6-ea79-4308-a858-88243c7ac97a",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:47:09",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "9413d3a9-d7b2-42cc-b0b5-053f155c8354", "updated_at": "2017-09-29 15:47:09",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "245829e7-3c2c-4ef5-8976-069717d04c92",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:47:09",
-        "name": "std.async_noop", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "2dc301fa-52cc-4ca5-bfbe-ef95cdb21578", "updated_at": null, "state": "RUNNING",
-        "task_name": "async", "output": null, "input": "{}", "accepted": false, "id":
-        "9d6c00e6-17a3-4da0-9717-0b9f5659c701", "description": ""}, {"state_info":
-        null, "created_at": "2017-09-29 15:47:11", "name": "std.async_noop", "tags":
-        null, "workflow_name": "echo_test", "task_execution_id": "025072df-e31f-4a3b-b48f-7ef009c23059",
-        "updated_at": "2017-09-29 15:47:13", "state": "SUCCESS", "task_name": "async",
+      string: '{"action_executions": [{"state_info": null, "created_at": "2021-02-06
+        21:59:09", "name": "std.async_noop", "tags": null, "workflow_name": "echo_test",
+        "task_execution_id": "f03d7de2-7d3b-475d-a220-a71053d1e4a6", "updated_at":
+        null, "state": "RUNNING", "task_name": "async", "output": null, "input": "{}",
+        "accepted": false, "id": "339d5485-06fc-4203-a29a-6477aa326cf6", "description":
+        ""}, {"state_info": null, "created_at": "2021-02-06 21:59:09", "name": "std.echo",
+        "tags": null, "workflow_name": "echo_test", "task_execution_id": "f86dfeb5-3420-46d8-9ae6-089f614daac4",
+        "updated_at": "2021-02-06 21:59:09", "state": "SUCCESS", "task_name": "echo",
+        "output": "{\"result\": \"ok\"}", "input": "{\"output\": \"ok\"}", "accepted":
+        true, "id": "f291f828-2dfc-47b6-8718-63e48a82aeee", "description": ""}, {"state_info":
+        null, "created_at": "2021-02-06 21:59:11", "name": "std.async_noop", "tags":
+        null, "workflow_name": "echo_test", "task_execution_id": "8878cbea-8743-4ab6-8820-c9e4da88753e",
+        "updated_at": "2021-02-06 21:59:13", "state": "SUCCESS", "task_name": "async",
         "output": "{\"result\": {\"this\": \"that\"}}", "input": "{}", "accepted":
-        true, "id": "1fcbba44-23c5-401d-a2bf-b6a506da9b4c", "description": ""}, {"state_info":
-        null, "created_at": "2017-09-29 15:47:11", "name": "std.echo", "tags": null,
-        "workflow_name": "echo_test", "task_execution_id": "98df436d-a981-4fec-be68-1de8839ece7f",
-        "updated_at": "2017-09-29 15:47:12", "state": "SUCCESS", "task_name": "echo",
+        true, "id": "00715bd7-c36f-48c1-967a-400344073d78", "description": ""}, {"state_info":
+        null, "created_at": "2021-02-06 21:59:11", "name": "std.echo", "tags": null,
+        "workflow_name": "echo_test", "task_execution_id": "c9f70952-791f-4f1b-898a-6dbb26895a42",
+        "updated_at": "2021-02-06 21:59:12", "state": "SUCCESS", "task_name": "echo",
         "output": "{\"result\": \"ok\"}", "input": "{\"output\": \"ok\"}", "accepted":
-        true, "id": "2198ddfe-cb10-413c-91f0-db5b28541877", "description": ""}, {"state_info":
-        null, "created_at": "2017-09-29 15:47:14", "name": "std.async_noop", "tags":
-        null, "workflow_name": "echo_test", "task_execution_id": "aaf8396b-911f-450b-9054-02bcdfa41b6e",
+        true, "id": "57f01507-b2d1-4108-8ec4-1d0253c91834", "description": ""}, {"state_info":
+        null, "created_at": "2021-02-06 21:59:14", "name": "std.async_noop", "tags":
+        null, "workflow_name": "echo_test", "task_execution_id": "83f7e72e-001f-4a06-ac7a-9717638e905d",
         "updated_at": null, "state": "RUNNING", "task_name": "async", "output": null,
-        "input": "{}", "accepted": false, "id": "879d8e9f-6383-448c-a02a-0ffa3400d16b",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:47:14",
+        "input": "{}", "accepted": false, "id": "659a6549-b75f-428a-95db-65aa773202d9",
+        "description": ""}, {"state_info": null, "created_at": "2021-02-06 21:59:14",
         "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "a764081b-24a7-4dd4-b9e8-fd95e46409b6", "updated_at": "2017-09-29 15:47:14",
+        "7f972580-7867-416a-8808-953624be573e", "updated_at": "2021-02-06 21:59:14",
         "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "8e29faa3-d089-4bf8-bcb9-85350ea2cdab",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:47:16",
+        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "b31c7b17-6af6-4d06-9127-824fac8258f1",
+        "description": ""}, {"state_info": null, "created_at": "2021-02-06 21:59:16",
         "name": "std.async_noop", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "a7b1ddbb-6417-4316-add9-c2654518c17e", "updated_at": null, "state": "RUNNING",
+        "ba28c8f6-4d3a-42b0-a820-04486e5f72e5", "updated_at": null, "state": "RUNNING",
         "task_name": "async", "output": null, "input": "{}", "accepted": false, "id":
-        "ba0090e8-bc72-4031-8da8-bbd490c93653", "description": ""}, {"state_info":
-        null, "created_at": "2017-09-29 15:47:16", "name": "std.echo", "tags": null,
-        "workflow_name": "echo_test", "task_execution_id": "3bf6f8a9-e839-4e8a-8d26-3f69fa5a3d3a",
-        "updated_at": "2017-09-29 15:47:17", "state": "SUCCESS", "task_name": "echo",
+        "6d50dc37-d19f-4660-8adc-b608f2ae8d84", "description": ""}, {"state_info":
+        null, "created_at": "2021-02-06 21:59:16", "name": "std.echo", "tags": null,
+        "workflow_name": "echo_test", "task_execution_id": "164fb90d-4c69-4e48-ac12-36849e616aa8",
+        "updated_at": "2021-02-06 21:59:16", "state": "SUCCESS", "task_name": "echo",
         "output": "{\"result\": \"ok\"}", "input": "{\"output\": \"ok\"}", "accepted":
-        true, "id": "cdbbfa2f-18ff-44b4-ac67-f86ec1b406a6", "description": ""}, {"state_info":
-        null, "created_at": "2017-09-29 15:47:19", "name": "std.async_noop", "tags":
-        null, "workflow_name": "echo_test", "task_execution_id": "f7ba171d-2e04-4ed3-9ddf-f2deb758ef53",
+        true, "id": "c9e0f531-2762-4415-908e-474679350abf", "description": ""}, {"state_info":
+        null, "created_at": "2021-02-06 21:59:19", "name": "std.echo", "tags": null,
+        "workflow_name": "echo_test", "task_execution_id": "52cb6330-4451-4c5e-a368-ed355f947929",
+        "updated_at": "2021-02-06 21:59:19", "state": "SUCCESS", "task_name": "echo",
+        "output": "{\"result\": \"ok\"}", "input": "{\"output\": \"ok\"}", "accepted":
+        true, "id": "04dd09c1-0c3f-40ca-a78f-fb0d6bd3b31a", "description": ""}, {"state_info":
+        null, "created_at": "2021-02-06 21:59:19", "name": "std.async_noop", "tags":
+        null, "workflow_name": "echo_test", "task_execution_id": "04eeead7-3e59-4e88-a091-222736f96e72",
         "updated_at": null, "state": "RUNNING", "task_name": "async", "output": null,
-        "input": "{}", "accepted": false, "id": "696e22c4-bbfe-4a5c-895a-0d17ce70030d",
-        "description": ""}, {"state_info": null, "created_at": "2017-09-29 15:47:19",
-        "name": "std.echo", "tags": null, "workflow_name": "echo_test", "task_execution_id":
-        "a79fab97-c75b-41d0-a40e-bea0b688f5d6", "updated_at": "2017-09-29 15:47:19",
-        "state": "SUCCESS", "task_name": "echo", "output": "{\"result\": \"ok\"}",
-        "input": "{\"output\": \"ok\"}", "accepted": true, "id": "ab0a5360-8293-4035-a3e9-1b2828caca39",
+        "input": "{}", "accepted": false, "id": "5f0cb4de-b1f6-4e73-b5d1-bedad6f2c7ec",
         "description": ""}]}'
-    http_version: 
-  recorded_at: Fri, 29 Sep 2017 15:48:14 GMT
+    http_version:
+  recorded_at: Sat, 06 Feb 2021 21:59:20 GMT
 - request:
     method: delete
-    uri: http://127.0.0.1:8001/api/v1/namespaces/workflows/pods/mistral:8989/proxy/v2/workflows/328ca582-1491-44a4-8bfc-c1be160d07d4
+    uri: http://localhost:8989/v2/workflows/6f9970a8-a2dd-4d68-b9fb-9e4f493bdf2f
     body:
       encoding: US-ASCII
       string: ''
@@ -576,11 +244,13 @@ http_interactions:
       code: 204
       message: No Content
     headers:
+      Content-Length:
+      - '0'
       Date:
-      - Fri, 29 Sep 2017 15:47:21 GMT
+      - Sat, 06 Feb 2021 21:59:21 GMT
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
-  recorded_at: Fri, 29 Sep 2017 15:48:15 GMT
-recorded_with: VCR 3.0.3
+    http_version:
+  recorded_at: Sat, 06 Feb 2021 21:59:21 GMT
+recorded_with: VCR 5.1.0
