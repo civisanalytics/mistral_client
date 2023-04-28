@@ -17,7 +17,7 @@ require 'mistral_client/workflow'
 module MistralClient
   class << self
     def new(base = nil, **options)
-      Client.new(base, options)
+      Client.new(base, **options)
     end
   end
 end
