@@ -2,7 +2,7 @@ module MistralClient
   class Client
     DEFAULT_HTTP_OPTIONS = { verify: true }.freeze
 
-    def initialize(base, **options)
+    def initialize(base, options)
       raise ConfigurationError, 'base is required' if base.to_s.empty?
 
       @base = base
