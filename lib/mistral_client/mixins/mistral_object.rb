@@ -17,7 +17,7 @@ module MistralClient
         self
       end
 
-      def list(params = {})
+      def list(**params)
         resp = @server.get("#{self.class::PATH}?#{URI.encode_www_form(params)}")
         resp[self.class::PATH].map do |t|
           task = self.class.new(@server)
