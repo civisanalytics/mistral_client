@@ -35,7 +35,7 @@ module MistralClient
       body = {}
       body[:description] = description unless description.nil?
       body[:state] = state if state
-      body[:params] = { env: env } if env
+      body[:params] = { env: } if env
 
       return if body.empty?
 
