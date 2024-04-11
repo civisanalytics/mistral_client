@@ -7,7 +7,7 @@ module MistralClient
 
         definition = File.read(definition) if File.exist?(definition)
         # Called outside the if/else to validate the YAML.
-        parsed = YAML.safe_load(definition, [], [], true)
+        parsed = YAML.safe_load(definition, aliases: true)
         if defined? massage_definition
           massage_definition(parsed)
         else

@@ -64,7 +64,7 @@ module MistralClient
                 else
                   { 'Content-Type' => 'text/plain' }
                 end
-      options = @http_options.merge(headers: headers, body: body)
+      options = @http_options.merge(headers:, body:)
       resp = HTTParty.send(verb, "#{@base}/#{path}", options)
       check_for_error(resp)
       JSON.parse(resp.body)

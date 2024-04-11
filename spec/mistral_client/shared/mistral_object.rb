@@ -3,7 +3,7 @@ shared_examples 'mistral_object' do
   let(:optional_date_fields) { %w[updated_at] }
   let(:optional_json_fields) { [] }
   let(:optional_unicode_fields) { [] }
-  let(:obj) { described_class.new(client, id: id) }
+  let(:obj) { described_class.new(client, id:) }
 
   describe '#reload' do
     it 'sets instance variables' do

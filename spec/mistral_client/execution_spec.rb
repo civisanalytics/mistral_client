@@ -71,7 +71,7 @@ describe MistralClient::Execution, vcr: true do
 
         it 'does not create an execution' do
           allow_any_instance_of(MistralClient::Execution).to receive(:reload)
-          ex = MistralClient::Execution.new(client, id: id)
+          ex = MistralClient::Execution.new(client, id:)
           expect(ex.id).to eq(id)
         end
       end
@@ -107,7 +107,7 @@ describe MistralClient::Execution, vcr: true do
             client,
             workflow_id: workflow_with_input.id,
             env: env_def_with_input['name'],
-            input: input
+            input:
           )
           expect(ex.input).to eq(input)
         end

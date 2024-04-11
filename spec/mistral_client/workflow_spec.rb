@@ -31,7 +31,7 @@ describe MistralClient::Workflow, vcr: true do
       end
 
       it 'validates a hash workflow' do
-        hash_wf = YAML.safe_load(definition, [], [], true)
+        hash_wf = YAML.safe_load(definition, aliases: true)
         expect(client.workflow.valid?(hash_wf)).to be true
       end
     end
