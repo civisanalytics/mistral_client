@@ -1,0 +1,17 @@
+services:
+  app:
+    env_file:
+      - path: .env
+        required: false
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - RUBY_VERSION=${RUBY_VERSION}
+        - RAILS_VERSION=${RAILS_VERSION}
+    image:
+      ruby-${RUBY_VERSION}-rails-${RAILS_VERSION}:latest
+    volumes:
+      - .:/src
+
+    command: tail -f /dev/null

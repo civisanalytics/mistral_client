@@ -138,6 +138,59 @@ release a new version, update the version number in `version.rb`, and then run
 git commits and tags, and push the `.gem` file
 to [rubygems.org](https://rubygems.org).
 
+
+## Docker
+
+This repo is set up with a unique local Docker setup with Docker Compose. With it, you can quickly build a Docker image with your preferred version of Ruby and your preferred version of Rails.
+
+For example, to spin up a container with Ruby 3.3 and Rails 7.1, you have the following options...
+
+<a name="build_image_and_run_container"></a>
+
+### Build Image and Run Container
+
+
+<a name="start_container_script_with_env_file"></a>
+
+### Using ./start_container.sh with .env File
+1. Create a copy of `example.env` named `.env` and place it in the root of the repo.
+2. Set the version of Ruby to whatever you desire. `RUBY_VERSION=3.3`
+3. Set the version of RAILS to whatever you desire. `RAILS_VERSION=7.1`
+4. Run the following command
+```bash
+./start_container.sh
+```
+
+<a name="start_container_with_command_line_arguments"></a>
+
+### Using ./start_container.sh with command line arguments
+1. Run the start_container.sh script with the appropriate arguments
+```bash
+./start_container.sh --ruby 3.3 --rails 7.1
+```
+
+<a name="rebuild_docker_image"></a>
+
+### Need to rebuild the docker image?
+
+```bash
+./start_container.sh --build
+./start_container.sh --rails 6.1 --ruby 3.1 --build
+```
+
+<a name="start_container_immediately_run_command"></a>
+
+### Want to start the container and immediately run a command?
+
+```bash
+  ./start_container.sh --command "echo 'hello world'"
+  ./start_container.sh --command rspec
+
+  ./srart_container.sh --rails 6.1 --ruby 3.2 --command "echo 'hello world'"
+  ./srart_container.sh --rails 6.1 --ruby 3.2 --command "echo rspec
+```
+
+
 ### To Record New VCR Cassettes
 
 Recording new cassettes is as simple as ensuring you have a Mistral server

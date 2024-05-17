@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'httparty', '~> 0.21.0'
-  spec.add_development_dependency 'bundler', '~> 2.5.7'
+  spec.add_development_dependency 'bundler', '~> 2', '< 3'
   spec.add_development_dependency 'pry', '~> 0.14.2'
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec', '~> 3.13.0'
