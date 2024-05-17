@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/civisanalytics/mistral_client'
   spec.license       = 'BSD-3-Clause'
 
-  spec.required_ruby_version = ['>= 3.1', '< 4']
+  spec.required_ruby_version = ['>= 3.0', '< 4']
   spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
