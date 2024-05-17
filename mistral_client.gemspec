@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/civisanalytics/mistral_client'
   spec.license       = 'BSD-3-Clause'
 
-  spec.required_ruby_version = ['>= 3.0', '< 4']
+  spec.required_ruby_version = ['>= 3.1', '< 4']
   spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
@@ -22,15 +22,14 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'httparty', '~> 0.22.0'
   spec.add_dependency 'csv' # Required by httparty
-
+  spec.add_dependency 'httparty', '~> 0.22.0'
+  spec.add_development_dependency 'base64' # Required by VCR
   spec.add_development_dependency 'bundler', '~> 2', '< 3'
   spec.add_development_dependency 'pry', '~> 0.14.2'
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec', '~> 3.13.0'
   spec.add_development_dependency 'rubocop', '~> 1.62.1'
   spec.add_development_dependency 'vcr', '~> 6.2'
-  spec.add_development_dependency 'base64' # Required by VCR
   spec.add_development_dependency 'webmock', '~> 3.23'
 end
